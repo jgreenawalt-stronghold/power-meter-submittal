@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "power-meter-etl"
+version = "0.1.0"
+description = "ETL program for sending hourly metering data to PJM Power Meter"
+authors = ["jgreenawalt-stronghold <jgreenawalt@strongholddm.com>"]
+readme = "README.md"
+packages = [{include = "power_meter_etl"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+DateTime = "^5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

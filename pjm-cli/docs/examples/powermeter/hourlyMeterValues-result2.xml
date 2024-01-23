@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UploadResults>
+    <uploadResult>
+        <meterAccountID>20047</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>Saved the value: 1,000.000 for Meter Account Id: 20047 and hour: 2013-11-18T00:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 2.000 for Meter Account Id: 20047 and hour: 2013-11-18T01:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 3.002 for Meter Account Id: 20047 and hour: 2013-11-18T02:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>MW Values must be greater than -10,000.000. You submitted: -10,000 for hour: 2013-11-18T03:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -500.000 for Meter Account Id: 20047 and hour: 2013-11-18T04:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -600.114 for Meter Account Id: 20047 and hour: 2013-11-18T05:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 7.000 for Meter Account Id: 20047 and hour: 2013-11-18T06:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 8.000 for Meter Account Id: 20047 and hour: 2013-11-18T07:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 9.000 for Meter Account Id: 20047 and hour: 2013-11-18T08:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 10.000 for Meter Account Id: 20047 and hour: 2013-11-18T09:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 11.000 for Meter Account Id: 20047 and hour: 2013-11-18T10:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 12.000 for Meter Account Id: 20047 and hour: 2013-11-18T11:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 13.000 for Meter Account Id: 20047 and hour: 2013-11-18T12:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 14.333 for Meter Account Id: 20047 and hour: 2013-11-18T13:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 15.333 for Meter Account Id: 20047 and hour: 2013-11-18T14:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 16.000 for Meter Account Id: 20047 and hour: 2013-11-18T15:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 1,700.000 for Meter Account Id: 20047 and hour: 2013-11-18T16:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 18.180 for Meter Account Id: 20047 and hour: 2013-11-18T17:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 1,999.193 for Meter Account Id: 20047 and hour: 2013-11-18T18:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 20.333 for Meter Account Id: 20047 and hour: 2013-11-18T19:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 21.333 for Meter Account Id: 20047 and hour: 2013-11-18T20:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 22.333 for Meter Account Id: 20047 and hour: 2013-11-18T21:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 23.333 for Meter Account Id: 20047 and hour: 2013-11-18T22:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 24.333 for Meter Account Id: 20047 and hour: 2013-11-18T23:00:00.000-05:00.</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>1111</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T00:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T01:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T02:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T03:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T04:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T05:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T06:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T07:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T08:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T09:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T10:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T11:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T12:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T13:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T14:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T15:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T16:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T17:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T18:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T19:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T20:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T21:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T22:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Meter account Id: 1111 is not effective, or does not exist, for hour: 2013-11-18T23:00:00.000-05:00.</uploadStatusDescription>
+    </uploadResult>
+</UploadResults>

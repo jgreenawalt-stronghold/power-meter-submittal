@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UploadResults>
+    <uploadResult>
+        <meterAccountID>20047</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>Saved the value: 1,000.000 for Meter Account Id: 20047 and hour: 2013-11-19T00:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 2.000 for Meter Account Id: 20047 and hour: 2013-11-19T01:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 3.002 for Meter Account Id: 20047 and hour: 2013-11-19T02:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>MW Values must be greater than -10,000.000. You submitted: -10,000 for hour: 2013-11-19T03:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -500.000 for Meter Account Id: 20047 and hour: 2013-11-19T04:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -600.114 for Meter Account Id: 20047 and hour: 2013-11-19T05:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 7.000 for Meter Account Id: 20047 and hour: 2013-11-19T06:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 8.000 for Meter Account Id: 20047 and hour: 2013-11-19T07:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 9.000 for Meter Account Id: 20047 and hour: 2013-11-19T08:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 10.000 for Meter Account Id: 20047 and hour: 2013-11-19T09:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T10:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T11:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T12:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T13:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T14:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T15:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T16:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T17:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T18:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T19:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T20:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T21:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T22:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T23:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>20049</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>Saved the value: 1,000.000 for Meter Account Id: 20049 and hour: 2013-11-19T00:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 2.000 for Meter Account Id: 20049 and hour: 2013-11-19T01:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 3.012 for Meter Account Id: 20049 and hour: 2013-11-19T02:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -1,000.000 for Meter Account Id: 20049 and hour: 2013-11-19T03:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -500.000 for Meter Account Id: 20049 and hour: 2013-11-19T04:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: -600.114 for Meter Account Id: 20049 and hour: 2013-11-19T05:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 7.000 for Meter Account Id: 20049 and hour: 2013-11-19T06:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 8.000 for Meter Account Id: 20049 and hour: 2013-11-19T07:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 9.000 for Meter Account Id: 20049 and hour: 2013-11-19T08:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Saved the value: 10.000 for Meter Account Id: 20049 and hour: 2013-11-19T09:00:00.000-05:00.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T10:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T11:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T12:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T13:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T14:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T15:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T16:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T17:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T18:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T19:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T20:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T21:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T22:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+        <uploadStatusDescription>Cannot submit a value for hour: 2013-11-19T23:00:00.000-05:00, this is outside of the submission interval.</uploadStatusDescription>
+    </uploadResult>
+</UploadResults>

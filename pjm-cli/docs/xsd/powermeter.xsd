@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pm="http://www.pjm.com/soa/schemas/external/pm/v1" targetNamespace="http://www.pjm.com/soa/schemas/external/pm/v1" version="1.0">
+	<xs:element name="SubmittedMeterValues" type="pm:SubmittedMeterValues"/>
+	<xs:complexType name="SubmittedMeterValues">
+		<xs:sequence>
+			<xs:element name="meterAccount" type="pm:MeterAccount" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterAccount" type="pm:MeterAccount"/>
+	<xs:complexType name="MeterAccount">
+		<xs:sequence>
+			<xs:element name="meterAccountID" type="pm:MeterAccountID" minOccurs="1" maxOccurs="1"/>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="meterValues" type="pm:IntervalValues"/>
+				<xs:element name="correctionValue" type="pm:CorrectionValue"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="HourlyLoadValues" type="pm:HourlyLoadValues"/>
+	<xs:complexType name="HourlyLoadValues">
+		<xs:sequence>
+			<xs:element name="zoneID" type="pm:ZoneID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="loadValues" type="pm:IntervalValues"/>
+			<xs:element name="loadWithoutLossesOverrideValues" type="pm:IntervalValues" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterValues" type="pm:MeterValues"/>
+	<xs:complexType name="MeterValues">
+		<xs:sequence>
+			<xs:element name="meterAccount" type="pm:MeterAccountDetail" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="totalLoss" type="pm:Areas"/>
+			<xs:element name="totalInadvertent" type="pm:Areas"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Areas" type="pm:Areas"/>
+	<xs:complexType name="Areas">
+		<xs:sequence>
+			<xs:element name="area" type="pm:Area" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Area" type="pm:Area"/>
+	<xs:complexType name="Area">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="controlAreaName" type="pm:ControlAreaName" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="ehvAreaName" type="pm:EHVAreaName" minOccurs="1" maxOccurs="1"/>
+			</xs:choice>
+			<xs:element name="intervalValues" type="pm:IntervalValues"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterValueAllocation" type="pm:MeterValueAllocation"/>
+	<xs:complexType name="MeterValueAllocation">
+		<xs:sequence>
+			<xs:element name="meterAccount" type="pm:MeterAccountDetail" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="actualNmi" type="pm:IntervalValues"/>
+			<xs:element name="tga" type="pm:IntervalValues"/>
+			<xs:element name="adjustedNmi" type="pm:IntervalValues"/>
+			<xs:element name="shareLosses" type="pm:Areas"/>
+			<xs:element name="deratedLossAdjustment" type="pm:IntervalValues"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MonthlyCorrection" type="pm:MonthlyCorrection"/>
+	<xs:complexType name="MonthlyCorrection">
+		<xs:sequence>
+			<xs:element name="meterAccount" type="pm:MeterAccountDetail" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterAccountDetails" type="pm:MeterAccountDetails"/>
+	<xs:complexType name="MeterAccountDetails">
+		<xs:sequence>
+			<xs:element name="meterAccountDetails" type="pm:MeterAccountDetail" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoadSubmissionDetails" type="pm:LoadSubmissionDetails"/>
+	<xs:complexType name="LoadSubmissionDetails">
+		<xs:sequence>
+			<xs:element name="actualNmi" type="pm:IntervalValues"/>
+			<xs:element name="totalInternalGen" type="pm:IntervalValues"/>
+			<xs:element name="shareLosses" type="pm:Areas"/>
+			<xs:element name="loadWithLosses" type="pm:IntervalValues"/>
+			<xs:element name="deratedLossAdjustment" type="pm:IntervalValues"/>
+			<xs:element name="loadWithoutLosses" type="pm:IntervalValues"/>
+			<xs:element name="derationFactor" type="pm:IntervalFactors"/>
+			<xs:element name="EDCSubmittedLoad" type="pm:EDCSubmittedLoad" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="loadWithoutLossesOverrides" type="pm:LoadWithoutLossesOverrides" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoadWithoutLossesOverrides" type="pm:LoadWithoutLossesOverrides"/>
+	<xs:complexType name="LoadWithoutLossesOverrides">
+		<xs:sequence>
+			<xs:element name="zoneID" type="pm:ZoneID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="companyName" type="pm:CompanyName" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="intervalValues" type="pm:IntervalValues"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EDCSubmittedLoad" type="pm:EDCSubmittedLoad"/>
+	<xs:complexType name="EDCSubmittedLoad">
+		<xs:sequence>
+			<xs:element name="zoneID" type="pm:ZoneID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="companyName" type="pm:CompanyName" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="intervalValues" type="pm:IntervalValues"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UploadResults" type="pm:UploadResults"/>
+	<xs:complexType name="UploadResults">
+		<xs:sequence>
+			<xs:element name="uploadResult" type="pm:UploadResult" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UploadResult" type="pm:UploadResult"/>
+	<xs:complexType name="UploadResult">
+		<xs:sequence>
+			<xs:element name="meterAccountID" type="pm:MeterAccountID" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="zoneID" type="pm:ZoneID" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="uploadName" type="pm:UploadName" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="uploadStatus" type="pm:UploadStatus" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="uploadStatusDescription" type="pm:UploadStatusDescription" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IntervalValues" type="pm:IntervalValues"/>
+	<xs:complexType name="IntervalValues">
+		<xs:sequence>
+			<xs:element name="intervalValue" type="pm:IntervalValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IntervalValue" type="pm:IntervalValue"/>
+	<xs:complexType name="IntervalValue">
+		<xs:sequence>
+			<xs:element name="startDate" type="pm:StartDateAndTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="endDate" type="pm:EndDateAndTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mw" type="pm:MegawattValue" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IntervalFactors">
+		<xs:sequence>
+			<xs:element name="intervalFactor" type="pm:IntervalFactor" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IntervalFactor" type="pm:IntervalFactor"/>
+	<xs:complexType name="IntervalFactor">
+		<xs:sequence>
+			<xs:element name="startDate" type="pm:StartDateAndTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="endDate" type="pm:EndDateAndTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="factor" type="pm:FactorValue" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OwnershipFactor" type="pm:OwnershipFactor"/>
+	<xs:complexType name="OwnershipFactor">
+		<xs:sequence>
+			<xs:element name="assignedTo" type="pm:Party" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="controlArea" type="pm:PowerMeterControlArea" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ownershipFactorValue" type="pm:OwnershipFactorValue" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="effectiveDate" type="pm:EffectiveDateandTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="terminateDate" type="pm:TerminationDateandTime" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ReportedOwnerships" type="pm:ReportedOwnerships"/>
+	<xs:complexType name="ReportedOwnerships">
+		<xs:sequence>
+			<xs:element name="reportedOwnership" type="pm:OwnershipFactor" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AllocatedOwnerships" type="pm:AllocatedOwnerships"/>
+	<xs:complexType name="AllocatedOwnerships">
+		<xs:sequence>
+			<xs:element name="allocatedOwnership" type="pm:OwnershipFactor" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeterAccountDetail" type="pm:MeterAccountDetail"/>
+	<xs:complexType name="MeterAccountDetail">
+		<xs:sequence>
+			<xs:element name="meterAccountID" type="pm:MeterAccountID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="meterAccountName" type="pm:MeterAccountName" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="meterType" type="pm:MeterType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ehv" type="pm:EHVType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fiveMinuteSubmission" type="pm:FiveMinSubmissionType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="submitter" type="pm:Party" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="pNode" type="pm:PNode" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="effectiveDate" type="pm:EffectiveDateandTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="terminateDate" type="pm:TerminationDateandTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="allocatedOwnerships" type="pm:AllocatedOwnerships" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="reportedOwnerships" type="pm:ReportedOwnerships" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="counterParty" type="pm:Party" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="originalTotal" type="pm:MegawattValue" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="revisedTotal" type="pm:MegawattValue" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="correctionTotal" type="pm:MegawattValue" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourlyAllocatedValues" type="pm:IntervalValues" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="dailyMeterValues" type="pm:IntervalValues" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourlyMeterValues" type="pm:IntervalValues" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fiveMinuteMeterValues" type="pm:IntervalValues" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="allocatedAccount" type="pm:AllocatedAccount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="reportedAccount" type="pm:ReportedAccount" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ReportedAccount" type="pm:ReportedAccount"/>
+	<xs:complexType name="ReportedAccount">
+		<xs:sequence>
+			<xs:element name="reportedControlArea" type="pm:PowerMeterControlArea" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="reportedFactor" type="pm:Factor" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="reportedTo" type="pm:Party" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AllocatedAccount" type="pm:AllocatedAccount"/>
+	<xs:complexType name="AllocatedAccount">
+		<xs:sequence>
+			<xs:element name="allocatedControlArea" type="pm:PowerMeterControlArea" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="allocatedFactor" type="pm:Factor" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="allocatedTo" type="pm:Party" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CorrectionValue" type="pm:CorrectionValue"/>
+	<xs:complexType name="CorrectionValue">
+		<xs:sequence>
+			<xs:element name="date" type="pm:CorrectionDate" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="mw" type="pm:MegawattValue" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CorrectionDate">
+		<xs:annotation>
+			<xs:documentation>Month date for the correction value</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:gYearMonth"/>
+	</xs:simpleType>
+	<xs:element name="PNode" type="pm:PNode"/>
+	<xs:complexType name="PNode">
+		<xs:sequence>
+			<xs:element name="id" type="pm:PNodeID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="name" type="pm:PNodeName" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Party">
+		<xs:annotation>
+			<xs:documentation>Party is a company that represents submitter, counter party etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="Factor">
+		<xs:annotation>
+			<xs:documentation>The Allocated or Reported partys opposite adjustment amount, expressed as a percentage</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="CompanyName">
+		<xs:annotation>
+			<xs:documentation>The name of the zone</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="EHVType">
+		<xs:annotation>
+			<xs:documentation>A tag that represents a 500kV (EHV) account</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NO"/>
+			<xs:enumeration value="YES"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FiveMinSubmissionType">
+		<xs:annotation>
+			<xs:documentation>A tag that a meter account submitting 5 min values</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NO"/>
+			<xs:enumeration value="YES"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FactorValue">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MegawattValue">
+		<xs:annotation>
+			<xs:documentation>The megawatt value, could be load or genvalue</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MeterAccountID">
+		<xs:annotation>
+			<xs:documentation>The id of the meter account, as defined by PJM</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="EffectiveDateandTime">
+		<xs:annotation>
+			<xs:documentation>Effective Date and time of  any record</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="TerminationDateandTime">
+		<xs:annotation>
+			<xs:documentation>Termination Date and time of any record</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="MeterAccountName">
+		<xs:annotation>
+			<xs:documentation>The name of the meter account</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MeterType">
+		<xs:annotation>
+			<xs:documentation>The type of the meter account, either Gen or Tie</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GEN"/>
+			<xs:enumeration value="TIE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OwnershipFactorValue">
+		<xs:annotation>
+			<xs:documentation>Ownership Factor value</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:float"/>
+	</xs:simpleType>
+	<xs:simpleType name="PNodeID">
+		<xs:annotation>
+			<xs:documentation>The ID of the Pnode to which the meter account is tied</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="PNodeName">
+		<xs:annotation>
+			<xs:documentation>The name of the Pnode to which the meter account is tied</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="StartDateAndTime">
+		<xs:annotation>
+			<xs:documentation>Start Date Time</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="EndDateAndTime">
+		<xs:annotation>
+			<xs:documentation>End Date Time</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="PowerMeterControlArea">
+		<xs:annotation>
+			<xs:documentation>Control area the Power Meter account belongs to</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="UploadStatus">
+		<xs:annotation>
+			<xs:documentation>The status of the file uploaded</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="UploadName">
+		<xs:annotation>
+			<xs:documentation>The name of the upload</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="UploadStatusDescription">
+		<xs:annotation>
+			<xs:documentation>Description of the status of the file upload</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ZoneID">
+		<xs:annotation>
+			<xs:documentation>The id of the zone being submitted, as defined by PJM</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="EHVAreaName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ControlAreaName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:element name="AreaName" type="pm:AreaName"/>
+	<xs:complexType name="AreaName">
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="controlAreaName" type="pm:ControlAreaName" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ehvAreaName" type="pm:EHVAreaName" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:bid xmlns:exschedule="http://exschedule.pjm.com/">
+	<bidName>T2000004</bidName>
+	<exportPricingPointName>IMO</exportPricingPointName>
+	<dispatchable>false</dispatchable>
+	<transmissionId>584411</transmissionId>
+	<por>PJM</por>
+	<pod>ALTE</pod>
+	<message>OASIS is currently unavailable, moved to Pending OASIS</message>
+	<profiles>
+		<profile>
+			<profileStatus>PENDING_OASIS</profileStatus>
+			<message>OASIS is currently unavailable, moved to Pending OASIS</message>
+			<intervals>
+				<interval>
+					<startDate>2020-07-14T08:00:00.000Z</startDate>
+					<endDate>2020-07-15T09:00:00.000Z</endDate>
+					<mw>100</mw>
+				</interval>
+				<interval>
+					<startDate>2020-07-14T10:00:00.000Z</startDate>
+					<endDate>2020-07-15T11:00:00.000Z</endDate>
+					<mw>200</mw>
+				</interval>
+			</intervals>
+		</profile>
+		<profile>
+			<profileStatus>ACCEPTED</profileStatus>
+			<intervals>
+				<interval>
+					<startDate>2020-07-14T06:00:00.000Z</startDate>
+					<endDate>2020-07-15T07:00:00.000Z</endDate>
+					<mw>20</mw>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:bid>

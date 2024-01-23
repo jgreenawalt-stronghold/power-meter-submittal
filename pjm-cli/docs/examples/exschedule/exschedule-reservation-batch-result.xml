@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:reservations xmlns:exschedule="http://exschedule.pjm.com/">
+	<reservation>
+		<reservationName>ACA2000055</reservationName>
+		<por>ACA</por>
+		<pod>PJM</pod>
+		<dispatchable>false</dispatchable>
+		<expirationTimestamp>2020-07-22T18:30:00.000Z</expirationTimestamp>
+		<message>Reservation passed ramp validation</message>
+		<profiles>
+			<profile>
+				<profileStatus>PENDING_TAG</profileStatus>
+				<intervals>
+					<interval>
+						<startDate>2020-07-23T17:30:00.000Z</startDate>
+						<endDate>2020-07-23T18:30:00.000Z</endDate>
+						<mw>50</mw>
+					</interval>
+				</intervals>
+			</profile>
+		</profiles>
+	</reservation>
+	<reservation>
+		<reservationName>ACA2000056</reservationName>
+		<por>ACA</por>
+		<pod>PJM</pod>
+		<dispatchable>false</dispatchable>
+		<expirationTimestamp>2020-07-23T18:30:00.000Z</expirationTimestamp>
+		<message>Reservation passed ramp validation</message>
+		<profiles>
+			<profile>
+				<profileStatus>PENDING_TAG</profileStatus>
+				<intervals>
+					<interval>
+						<startDate>2020-07-24T17:30:00.000Z</startDate>
+						<endDate>2020-07-24T18:30:00.000Z</endDate>
+						<mw>75</mw>
+					</interval>
+				</intervals>
+			</profile>
+		</profiles>
+	</reservation>
+</exschedule:reservations>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UploadResults>
+    <uploadResult>
+        <meterAccountID>20047</meterAccountID>
+        <uploadStatus>Success</uploadStatus>
+        <uploadStatusDescription>Warning, the value entered was less than -50,000.000.</uploadStatusDescription>
+        <uploadStatusDescription>Saved - Meter Account Id: 20047, Meter correction value: -50,000.000 submitted. Original total: 98,753.445 + -50,000.000 = Revised 48,753.445</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>20045</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>MW Values must be less than 10,000,000.000. You submitted: 10,000,000 for month: 2013-10.</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>21120</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>MW Values must be greater than -10,000,000.000. You submitted: -10,000,000 for month: 2013-10.</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>20044</meterAccountID>
+        <uploadStatus>Success</uploadStatus>
+        <uploadStatusDescription>Saved - Meter Account Id: 20044, Meter correction value: -88.087 submitted. Original total: 5,616.244 + -88.087 = Revised 5,528.157</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>20190</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>PJM TEST is not the submitter for Meter Account Id: 20190 for month: 2013-10.</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>21550</meterAccountID>
+        <uploadStatus>Success</uploadStatus>
+        <uploadStatusDescription>Warning, the value entered was greater than 50,000.000.</uploadStatusDescription>
+        <uploadStatusDescription>Saved - Meter Account Id: 21550, Meter correction value: 50,000.000 submitted. Original total: 0.000 + 50,000.000 = Revised 50,000.000</uploadStatusDescription>
+    </uploadResult>
+    <uploadResult>
+        <meterAccountID>11</meterAccountID>
+        <uploadStatus>Failure</uploadStatus>
+        <uploadStatusDescription>Meter account Id: 11 is not effective, or does not exist, for month: 2013-10.</uploadStatusDescription>
+    </uploadResult>
+</UploadResults>

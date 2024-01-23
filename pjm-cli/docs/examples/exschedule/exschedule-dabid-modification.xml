@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:bid xmlns:exschedule="http://exschedule.pjm.com/">
+	<!-- If Bid contains a bidName then we assume you are trying to modify an existing bid -->
+	<bidName>T2000004</bidName>
+	<exportPricingPointName>IMO</exportPricingPointName>
+	<dispatchable>false</dispatchable>
+	<transmissionId>584411</transmissionId>
+	<por>PJM</por>
+	<pod>ALTE</pod>
+	<profiles>
+		<profile>
+			<profileStatus>WORKING</profileStatus>
+			<intervals>
+				<interval>
+					<startDate>2020-07-14T08:00:00.000Z</startDate>
+					<endDate>2020-07-15T09:00:00.000Z</endDate>
+					<mw>100</mw>
+				</interval>
+				<interval>
+					<startDate>2020-07-14T10:00:00.000Z</startDate>
+					<endDate>2020-07-15T11:00:00.000Z</endDate>
+					<mw>200</mw>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:bid>

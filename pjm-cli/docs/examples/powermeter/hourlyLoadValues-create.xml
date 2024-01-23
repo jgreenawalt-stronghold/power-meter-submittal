@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pm:HourlyLoadValues xsi:schemaLocation="http://www.pjm.com/soa/schemas/external/pm/v1 powermeter.xsd" xmlns:pm="http://www.pjm.com/soa/schemas/external/pm/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<zoneID>3</zoneID>
+	<loadValues>
+			<intervalValue>
+				<startDate>2013-11-05T00:00:00-05:00</startDate>
+				<endDate>2013-11-05T01:00:00-05:00</endDate>
+				<mw>1</mw>
+			</intervalValue>	
+			
+			<intervalValue>
+				<startDate>2013-11-05T01:00:00-05:00</startDate>
+				<endDate>2013-11-05T02:00:00-05:00</endDate>
+				<mw>2</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T02:00:00-05:00</startDate>
+				<endDate>2013-11-05T03:00:00-05:00</endDate>
+				<mw>3</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T03:00:00-05:00</startDate>
+				<endDate>2013-11-05T04:00:00-05:00</endDate>
+				<mw>4</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T04:00:00-05:00</startDate>
+				<endDate>2013-11-05T05:00:00-05:00</endDate>
+				<mw>5.555</mw>
+			</intervalValue>			
+
+			<intervalValue>
+				<startDate>2013-11-05T05:00:00-05:00</startDate>
+				<endDate>2013-11-05T06:00:00-05:00</endDate>
+				<mw>6</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T06:00:00-05:00</startDate>
+				<endDate>2013-11-05T07:00:00-05:00</endDate>
+				<mw>7</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T07:00:00-05:00</startDate>
+				<endDate>2013-11-05T08:00:00-05:00</endDate>
+				<mw>8</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T08:00:00-05:00</startDate>
+				<endDate>2013-11-05T09:00:00-05:00</endDate>
+				<mw>9</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T09:00:00-05:00</startDate>
+				<endDate>2013-11-05T10:00:00-05:00</endDate>
+				<mw>10</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T10:00:00-05:00</startDate>
+				<endDate>2013-11-05T11:00:00-05:00</endDate>
+				<mw>11</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T11:00:00-05:00</startDate>
+				<endDate>2013-11-05T12:00:00-05:00</endDate>
+				<mw>12</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T12:00:00-05:00</startDate>
+				<endDate>2013-11-05T13:00:00-05:00</endDate>
+				<mw>13</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T13:00:00-05:00</startDate>
+				<endDate>2013-11-05T14:00:00-05:00</endDate>
+				<mw>14</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T14:00:00-05:00</startDate>
+				<endDate>2013-11-05T15:00:00-05:00</endDate>
+				<mw>15</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T14:00:00-05:00</startDate>
+				<endDate>2013-11-05T15:00:00-05:00</endDate>
+				<mw>16</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T16:00:00-05:00</startDate>
+				<endDate>2013-11-05T17:00:00-05:00</endDate>
+				<mw>17</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T17:00:00-05:00</startDate>
+				<endDate>2013-11-05T18:00:00-05:00</endDate>
+				<mw>18</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T18:00:00-05:00</startDate>
+				<endDate>2013-11-05T19:00:00-05:00</endDate>
+				<mw>19</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T19:00:00-05:00</startDate>
+				<endDate>2013-11-05T20:00:00-05:00</endDate>
+				<mw>20</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T20:00:00-05:00</startDate>
+				<endDate>2013-11-05T21:00:00-05:00</endDate>
+				<mw>21</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T21:00:00-05:00</startDate>
+				<endDate>2013-11-05T22:00:00-05:00</endDate>
+				<mw>22</mw>
+			</intervalValue>	
+			
+			<intervalValue>
+				<startDate>2013-11-05T22:00:00-05:00</startDate>
+				<endDate>2013-11-05T23:00:00-05:00</endDate>
+				<mw>23</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T23:00:00-05:00</startDate>
+				<endDate>2013-11-06T00:00:00-05:00</endDate>
+				<mw>24</mw>
+			</intervalValue>
+	</loadValues>
+	<loadWithoutLossesOverrideValues>
+			<intervalValue>
+				<startDate>2013-11-05T00:00:00-05:00</startDate>
+				<endDate>2013-11-05T01:00:00-05:00</endDate>
+				<mw>1</mw>
+			</intervalValue>	
+			
+			<intervalValue>
+				<startDate>2013-11-05T01:00:00-05:00</startDate>
+				<endDate>2013-11-05T02:00:00-05:00</endDate>
+				<mw>2</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T02:00:00-05:00</startDate>
+				<endDate>2013-11-05T03:00:00-05:00</endDate>
+				<mw>3</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T03:00:00-05:00</startDate>
+				<endDate>2013-11-05T04:00:00-05:00</endDate>
+				<mw>4</mw>
+			</intervalValue>
+
+			<intervalValue>
+				<startDate>2013-11-05T04:00:00-05:00</startDate>
+				<endDate>2013-11-05T05:00:00-05:00</endDate>
+				<mw>5.555</mw>
+			</intervalValue>			
+
+			<intervalValue>
+				<startDate>2013-11-05T05:00:00-05:00</startDate>
+				<endDate>2013-11-05T06:00:00-05:00</endDate>
+				<mw>6</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T06:00:00-05:00</startDate>
+				<endDate>2013-11-05T07:00:00-05:00</endDate>
+				<mw>7</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T07:00:00-05:00</startDate>
+				<endDate>2013-11-05T08:00:00-05:00</endDate>
+				<mw>8</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T08:00:00-05:00</startDate>
+				<endDate>2013-11-05T09:00:00-05:00</endDate>
+				<mw>9</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T09:00:00-05:00</startDate>
+				<endDate>2013-11-05T10:00:00-05:00</endDate>
+				<mw>10</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T10:00:00-05:00</startDate>
+				<endDate>2013-11-05T11:00:00-05:00</endDate>
+				<mw>11</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T11:00:00-05:00</startDate>
+				<endDate>2013-11-05T12:00:00-05:00</endDate>
+				<mw>12</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T12:00:00-05:00</startDate>
+				<endDate>2013-11-05T13:00:00-05:00</endDate>
+				<mw>13</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T13:00:00-05:00</startDate>
+				<endDate>2013-11-05T14:00:00-05:00</endDate>
+				<mw>14</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T14:00:00-05:00</startDate>
+				<endDate>2013-11-05T15:00:00-05:00</endDate>
+				<mw>15</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T14:00:00-05:00</startDate>
+				<endDate>2013-11-05T15:00:00-05:00</endDate>
+				<mw>16</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T16:00:00-05:00</startDate>
+				<endDate>2013-11-05T17:00:00-05:00</endDate>
+				<mw>17</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T17:00:00-05:00</startDate>
+				<endDate>2013-11-05T18:00:00-05:00</endDate>
+				<mw>18</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T18:00:00-05:00</startDate>
+				<endDate>2013-11-05T19:00:00-05:00</endDate>
+				<mw>19</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T19:00:00-05:00</startDate>
+				<endDate>2013-11-05T20:00:00-05:00</endDate>
+				<mw>20</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T20:00:00-05:00</startDate>
+				<endDate>2013-11-05T21:00:00-05:00</endDate>
+				<mw>21</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T21:00:00-05:00</startDate>
+				<endDate>2013-11-05T22:00:00-05:00</endDate>
+				<mw>22</mw>
+			</intervalValue>	
+			
+			<intervalValue>
+				<startDate>2013-11-05T22:00:00-05:00</startDate>
+				<endDate>2013-11-05T23:00:00-05:00</endDate>
+				<mw>23</mw>
+			</intervalValue>
+			
+			<intervalValue>
+				<startDate>2013-11-05T23:00:00-05:00</startDate>
+				<endDate>2013-11-06T00:00:00-05:00</endDate>
+				<mw>24</mw>
+			</intervalValue>
+	</loadWithoutLossesOverrideValues>
+</pm:HourlyLoadValues>

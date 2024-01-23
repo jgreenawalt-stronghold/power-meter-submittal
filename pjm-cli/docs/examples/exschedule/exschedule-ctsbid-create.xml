@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ctsBid xmlns:ns2="http://exschedule.pjm.com/">
+    <outsideName>TEST12345</outsideName>
+    <fromMarket>MISO</fromMarket>
+    <toMarket>PJM</toMarket>
+    <profiles>
+        <profile>
+            <profileStatus>WORKING</profileStatus>
+            <intervals>
+                <interval>
+                    <startDate>2020-09-30T14:30:00.000Z</startDate>
+                    <endDate>2020-10-01T01:00:00.000Z</endDate>
+                    <mw>20</mw>
+                    <price>1</price>
+                    <mw1>30</mw1>
+                    <price1>8</price1>
+                    <mw2>40</mw2>
+                    <price2>10</price2>
+                </interval>
+            </intervals>
+        </profile>
+    </profiles>
+</ns2:ctsBid>

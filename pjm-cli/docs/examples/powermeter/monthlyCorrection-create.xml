@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pm:SubmittedMeterValues xsi:schemaLocation="http://www.pjm.com/soa/schemas/external/pm/v1 powermeter.xsd" xmlns:pm="http://www.pjm.com/soa/schemas/external/pm/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<meterAccount>
+		<meterAccountID>20712</meterAccountID>
+		<correctionValue>
+			<date>2013-10</date>
+			<mw>-5000.0033</mw>
+		</correctionValue>
+	</meterAccount>
+	
+	<meterAccount>
+		<meterAccountID>20711</meterAccountID>
+		<correctionValue>
+			<date>2013-10</date>
+			<mw>9965.987</mw>
+		</correctionValue>
+	</meterAccount>
+
+
+</pm:SubmittedMeterValues>

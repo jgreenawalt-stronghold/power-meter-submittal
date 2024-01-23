@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://exschedule.pjm.com/" xmlns:tns="http://exschedule.pjm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="bid" type="tns:bid"/>
+
+  <xs:element name="bids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bid" type="tns:bid" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="creditUsages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="startDate" type="xs:dateTime"/>
+        <xs:element name="endDate" type="xs:dateTime"/>
+        <xs:element name="creditLimit" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="usage" type="tns:creditUsage" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ctsBid" type="tns:ctsBid"/>
+
+  <xs:element name="ctsBids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ctsBid" type="tns:ctsBid" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="docket" type="tns:docket"/>
+
+  <xs:element name="interchange" type="tns:interchangeAvailable"/>
+
+  <xs:element name="interchangeAvailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="timestamp" type="xs:dateTime"/>
+        <xs:element name="availability" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="interchange" type="tns:interchangeAvailable" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ramp" type="tns:rampAvailable"/>
+
+  <xs:element name="rampavailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="timestamp" type="xs:dateTime"/>
+        <xs:element name="controlArea" type="xs:string"/>
+        <xs:element name="availability" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ramp" type="tns:rampAvailable" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="reservation" type="tns:reservation"/>
+
+  <xs:element name="reservations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reservation" type="tns:reservation" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="schedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="schedule" type="tns:organizerSchedule" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="tagReservations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tagReservation" type="tns:tagReservation" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="organizerSchedule">
+    <xs:sequence>
+      <xs:element name="tagId" type="xs:string" minOccurs="0"/>
+      <xs:element name="tagStatus" type="tns:tagStatusType" minOccurs="0"/>
+      <xs:element name="tagPendingTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="rampReservationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="rampStatus" type="tns:profileStatusType" minOccurs="0"/>
+      <xs:element name="rampQueueTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="outsideId" type="xs:string" minOccurs="0"/>
+      <xs:element name="outsideName" type="xs:string" minOccurs="0"/>
+      <xs:element name="por" type="xs:string" minOccurs="0"/>
+      <xs:element name="pod" type="xs:string" minOccurs="0"/>
+      <xs:element name="market" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="frp" type="xs:string" minOccurs="0"/>
+      <xs:element name="specialException" type="xs:string" minOccurs="0"/>
+      <xs:element name="importPricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="exportPricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="startDateTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="stopDateTime" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ctsBid">
+    <xs:sequence>
+      <xs:element name="bidName" type="xs:string" minOccurs="0"/>
+      <xs:element name="outsideName" type="xs:string" minOccurs="0"/>
+      <xs:element name="fromMarket" type="xs:string"/>
+      <xs:element name="toMarket" type="xs:string"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="profiles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="profile" type="tns:profile" nillable="true" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="profile">
+    <xs:sequence>
+      <xs:element name="profileStatus" type="tns:profileStatusType" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="intervals" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="interval" type="tns:energyInterval" nillable="true" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="energyInterval">
+    <xs:sequence>
+      <xs:element name="startDate" type="xs:dateTime"/>
+      <xs:element name="endDate" type="xs:dateTime"/>
+      <xs:element name="mw" type="xs:decimal"/>
+      <xs:element name="price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw1" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price1" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw2" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price2" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw3" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price3" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw4" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price4" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw5" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price5" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw6" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price6" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw7" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price7" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw8" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price8" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mw9" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="price9" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tagReservation">
+    <xs:sequence>
+      <xs:element name="contractId" type="xs:string" minOccurs="0"/>
+      <xs:element name="pathType" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="tagId" type="xs:string" minOccurs="0"/>
+      <xs:element name="tagType" type="xs:string" minOccurs="0"/>
+      <xs:element name="pod" type="xs:string" minOccurs="0"/>
+      <xs:element name="por" type="xs:string" minOccurs="0"/>
+      <xs:element name="sinkZone" type="xs:string" minOccurs="0"/>
+      <xs:element name="sourceZone" type="xs:string" minOccurs="0"/>
+      <xs:element name="specialException" type="xs:string" minOccurs="0"/>
+      <xs:element name="exportPricingPointName" type="xs:string" minOccurs="0"/>
+      <xs:element name="importPricingPointName" type="xs:string" minOccurs="0"/>
+      <xs:element name="checkoutCa" type="xs:string" minOccurs="0"/>
+      <xs:element name="intervals" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="interval" type="tns:tagReservationInterval" nillable="true" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tagReservationInterval">
+    <xs:sequence>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="mwActual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mwRequested" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="mwTransmission" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="cost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="reason" type="xs:string" minOccurs="0"/>
+      <xs:element name="transmissionId" type="xs:long" minOccurs="0"/>
+      <xs:element name="transmissionPriority" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rampAvailable">
+    <xs:sequence>
+      <xs:element name="delayedExport" type="xs:int" minOccurs="0"/>
+      <xs:element name="delayedImport" type="xs:int" minOccurs="0"/>
+      <xs:element name="effectiveDate" type="xs:dateTime"/>
+      <xs:element name="export" type="xs:int"/>
+      <xs:element name="import" type="xs:int"/>
+      <xs:element name="limitExport" type="xs:int"/>
+      <xs:element name="limitImport" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interchangeAvailable">
+    <xs:sequence>
+      <xs:element name="effectiveDate" type="xs:dateTime"/>
+      <xs:element name="capMw" type="xs:int"/>
+      <xs:element name="availableMw" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reservation">
+    <xs:sequence>
+      <xs:element name="reservationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="por" type="xs:string"/>
+      <xs:element name="pod" type="xs:string"/>
+      <xs:element name="dispatchable" type="xs:boolean"/>
+      <xs:element name="expirationTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="outsideId" type="xs:string" minOccurs="0"/>
+      <xs:element name="outsideName" type="xs:string" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="profiles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="profile" type="tns:profile" nillable="true" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="creditUsage">
+    <xs:sequence>
+      <xs:element name="tagId" type="xs:string"/>
+      <xs:element name="startDate" type="xs:dateTime"/>
+      <xs:element name="endDate" type="xs:dateTime"/>
+      <xs:element name="tagMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="creditUsed" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bid">
+    <xs:sequence>
+      <xs:element name="bidName" type="xs:string" minOccurs="0"/>
+      <xs:element name="outsideName" type="xs:string" minOccurs="0"/>
+      <xs:element name="importPricingPointName" type="xs:string" minOccurs="0"/>
+      <xs:element name="exportPricingPointName" type="xs:string" minOccurs="0"/>
+      <xs:element name="dispatchable" type="xs:boolean"/>
+      <xs:element name="transmissionId" type="xs:long" minOccurs="0"/>
+      <xs:element name="por" type="xs:string" minOccurs="0"/>
+      <xs:element name="pod" type="xs:string" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="profiles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="profile" type="tns:profile" nillable="true" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="docket">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:string" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="result" type="xs:string" minOccurs="0"/>
+      <xs:element name="docketItem" type="tns:docketItem" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="docketItem">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="tns:docketItemType" use="required"/>
+    <xs:attribute name="timestamp" type="xs:dateTime" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="tagStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QUEUED"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="CONFIRMED"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="WITHDRAWN"/>
+      <xs:enumeration value="REJECTED"/>
+      <xs:enumeration value="CANCELLED"/>
+      <xs:enumeration value="IMPLEMENTED"/>
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="SCHEDULED"/>
+      <xs:enumeration value="TERMINATED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="profileStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="WORKING"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="PROPOSED"/>
+      <xs:enumeration value="DISPATCHABLE"/>
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="WITHDRAWN"/>
+      <xs:enumeration value="PENDING_TAG"/>
+      <xs:enumeration value="DELAYED"/>
+      <xs:enumeration value="IN_QUEUE"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="CURTAILED"/>
+      <xs:enumeration value="SUBMITTED"/>
+      <xs:enumeration value="ACCEPTED"/>
+      <xs:enumeration value="PENDING_OASIS"/>
+      <xs:enumeration value="REQUESTED"/>
+      <xs:enumeration value="TAG_LINKED"/>
+      <xs:enumeration value="VALIDATED"/>
+      <xs:enumeration value="CLEARED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="docketItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFO"/>
+      <xs:enumeration value="WARN"/>
+      <xs:enumeration value="ERROR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

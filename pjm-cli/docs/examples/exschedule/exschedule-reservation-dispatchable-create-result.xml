@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:reservation xmlns:exschedule="http://exschedule.pjm.com/">
+	<reservationName>ACA2000014</reservationName>
+	<por>ACA</por>
+	<pod>PJM</pod>
+	<dispatchable>true</dispatchable>
+	<expirationTimestamp>2020-07-19T18:30:00.000Z</expirationTimestamp>
+	<profiles>
+		<profile>
+			<profileStatus>PROPOSED</profileStatus>
+			<intervals>
+				<interval>
+					<startDate>2020-07-20T17:30:00.000Z</startDate>
+					<endDate>2020-07-20T18:30:00.000Z</endDate>
+					<mw>100</mw>
+					<price>1.67</price>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:reservation>

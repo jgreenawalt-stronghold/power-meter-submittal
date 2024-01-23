@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:reservation xmlns:exschedule="http://exschedule.pjm.com/">
+	<!-- No reservationName element means you want to create a new reservation -->
+	<por>ACA</por>
+	<pod>PJM</pod>
+	<dispatchable>false</dispatchable>
+	<outsideId>vendor-id</outsideId>
+	<outsideName>vendor-name</outsideName>
+	<profiles>
+		<profile>
+			<intervals>
+				<interval>
+					<!-- note times are in UTC, if you want UTC offset use 2020-07-14T06:00:00.000-05:00 -->
+					<!-- see http://www.w3.org/TR/NOTE-datetime for more information on XML datetime formats -->
+					<startDate>2020-07-20T17:30:00.000Z</startDate>
+					<endDate>2020-07-20T18:30:00.000Z</endDate>
+					<mw>100</mw>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:reservation>

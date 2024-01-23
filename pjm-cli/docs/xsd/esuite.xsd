@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://esuite.pjm.com/" xmlns:tns="http://esuite.pjm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="uploadResponse" type="tns:uploadResponse"/>
+
+  <xs:complexType name="uploadResponse">
+    <xs:sequence>
+      <xs:element name="timestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="filename" type="xs:string" minOccurs="0"/>
+      <xs:element name="successful" type="xs:boolean"/>
+      <xs:element name="results" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="result" type="tns:result" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element name="type" type="tns:resultType" minOccurs="0"/>
+      <xs:element name="lineNumber" type="xs:long" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="resultType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFO"/>
+      <xs:enumeration value="WARN"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="FATAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

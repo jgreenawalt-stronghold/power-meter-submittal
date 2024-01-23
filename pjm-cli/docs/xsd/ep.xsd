@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.pjm.com/external/schemas/emergencyprocedures/v1" xmlns:epext="http://www.pjm.com/external/schemas/emergencyprocedures/v1" xmlns:tns="http://www.pjm.com/external/schemas/emergencyprocedures/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EmergencyMessage" type="epext:EmergencyMessage"/>
+	<xs:complexType name="EmergencyMessage">
+		<xs:sequence>
+			<xs:element name="messageId" type="xs:long" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="messageType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="postedTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="canceledTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="message" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pjmDrill" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pjmCP" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="priority" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="applicableStartTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="applicableEndTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="effectiveStartTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="effectiveEndTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Region" type="epext:EmergencyMessageRegion" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmergencyMessageRegion" type="epext:EmergencyMessageRegion"/>
+	<xs:complexType name="EmergencyMessageRegion">
+		<xs:sequence>
+			<xs:element name="LoadManagementDetail" type="epext:LoadManagementDetail" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="regionName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="regionType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoadManagementDetail" type="epext:LoadManagementDetail"/>
+	<xs:complexType name="LoadManagementDetail">
+		<xs:sequence>
+			<xs:element name="canceledTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="leadTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="product" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PAIGuidance" type="epext:PAIGuidance"/>
+	<xs:complexType name="PAIGuidance">
+		<xs:sequence>
+			<xs:element name="ZonalDetails" type="epext:ZonalDetails" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ZonalDetails" type="epext:ZonalDetails"/>
+	<xs:complexType name="ZonalDetails">
+		<xs:sequence>
+			<xs:element name="zoneName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="messageId" type="xs:long" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="effectiveStartTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="effectiveEndTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmergencyProcedures" type="epext:EmergencyProcedures"/>
+	<xs:complexType name="EmergencyProcedures">
+		<xs:sequence>
+			<xs:element name="EmergencyMessage" type="epext:EmergencyMessage" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="PAIGuidance" type="epext:PAIGuidance" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:reservations xmlns:exschedule="http://exschedule.pjm.com/">
+	<!-- Submit up to 5 reservations to be evaluated against Ramp validation simultaneously -->
+	<reservation>
+		<por>ACA</por>
+		<pod>PJM</pod>
+		<dispatchable>false</dispatchable>
+		<profiles>
+			<profile>
+				<profileStatus>WORKING</profileStatus>
+				<intervals>
+					<interval>
+						<startDate>2020-07-23T17:30:00.000Z</startDate>
+						<endDate>2020-07-23T18:30:00.000Z</endDate>
+						<mw>50</mw>
+					</interval>
+				</intervals>
+			</profile>
+		</profiles>
+	</reservation>
+	<reservation>
+		<por>ACA</por>
+		<pod>PJM</pod>
+		<dispatchable>false</dispatchable>
+		<profiles>
+			<profile>
+				<profileStatus>WORKING</profileStatus>
+				<intervals>
+					<interval>
+						<startDate>2020-07-24T17:30:00.000Z</startDate>
+						<endDate>2020-07-24T18:30:00.000Z</endDate>
+						<mw>75</mw>
+					</interval>
+				</intervals>
+			</profile>
+		</profiles>
+	</reservation>
+</exschedule:reservations>

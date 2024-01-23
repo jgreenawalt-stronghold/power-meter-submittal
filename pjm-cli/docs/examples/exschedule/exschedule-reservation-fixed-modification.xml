@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:reservation xmlns:exschedule="http://exschedule.pjm.com/">
+	<!-- If Reservation contains a reservationName then we assume you are trying to modify an existing reservation -->
+	<reservationName>ACA2000014</reservationName>
+	<por>ACA</por>
+	<pod>PJM</pod>
+	<dispatchable>false</dispatchable>
+	<outsideId>vendor-id</outsideId>
+	<outsideName>vendor-name</outsideName>
+	<profiles>
+		<profile>
+			<profileStatus>WORKING</profileStatus>
+			<intervals>
+				<interval>
+					<startDate>2020-07-20T18:30:00.000Z</startDate>
+					<endDate>2020-07-20T19:30:00.000Z</endDate>
+					<mw>100</mw>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:reservation>

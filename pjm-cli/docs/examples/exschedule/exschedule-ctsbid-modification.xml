@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ctsBid xmlns:ns2="http://exschedule.pjm.com/">
+    <bidName>CTS3000009</bidName>
+    <outsideName>TEST12345</outsideName>
+    <fromMarket>MISO</fromMarket>
+    <toMarket>PJM</toMarket>
+    <message>Requested profile withdrawn by user</message>
+    <profiles>
+        <profile>
+            <profileStatus>REQUESTED</profileStatus>
+            <intervals>
+                <interval>
+                    <startDate>2020-09-30T14:30:00.000Z</startDate>
+                    <endDate>2020-10-01T01:00:00.000Z</endDate>
+                    <mw>10</mw>
+                    <price>1.00</price>
+                    <mw1>20</mw1>
+                    <price1>2.00</price1>
+                    <mw2>30</mw2>
+                    <price2>3.00</price2>
+                    <mw3>40</mw3>
+                    <price3>4.50</price3>
+                    <mw4>50</mw4>
+                    <price4>5.00</price4>
+                    <mw5>60</mw5>
+                    <price5>6.00</price5>
+                    <mw6>70</mw6>
+                    <price6>7.00</price6>
+                    <mw7>80</mw7>
+                    <price7>8.00</price7>
+                    <mw8>90</mw8>
+                    <price8>9.00</price8>
+                    <mw9>100</mw9>
+                    <price9>10.65</price9>
+                </interval>
+            </intervals>
+        </profile>
+    </profiles>
+</ns2:ctsBid>

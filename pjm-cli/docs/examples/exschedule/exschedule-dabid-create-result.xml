@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exschedule:bid xmlns:exschedule="http://exschedule.pjm.com/">
+	<bidName>T2000004</bidName>
+	<exportPricingPointName>IMO</exportPricingPointName>
+	<dispatchable>false</dispatchable>
+	<transmissionId>584411</transmissionId>
+	<por>PJM</por>
+	<pod>ALTE</pod>
+	<profiles>
+		<profile>
+			<profileStatus>ACCEPTED</profileStatus>
+			<intervals>
+				<interval>
+					<startDate>2020-07-14T06:00:00.000Z</startDate>
+					<endDate>2020-07-15T07:00:00.000Z</endDate>
+					<mw>20</mw>
+				</interval>
+			</intervals>
+		</profile>
+	</profiles>
+</exschedule:bid>

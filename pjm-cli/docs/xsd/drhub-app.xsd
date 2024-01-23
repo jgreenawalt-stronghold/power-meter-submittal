@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://drhub.pjm.com/" xmlns:tns="http://drhub.pjm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="cblCalculation" type="tns:cblCalculation"/>
+
+  <xs:element name="compliance" type="tns:compliance"/>
+
+  <xs:element name="compliances">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="compliances" type="tns:compliance" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dailyData" type="tns:dailyData"/>
+
+  <xs:element name="dailyDataList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dailyData" type="tns:dailyData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dispatchGroupDetail" type="tns:dispatchGroupDetail"/>
+
+  <xs:element name="dispatchGroupDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dispatchGroupDetail" type="tns:dispatchGroupDetail" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="eventSummary" type="tns:eventSummary"/>
+
+  <xs:element name="events">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="eventSummary" type="tns:eventSummary" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="expectedReductionData" type="tns:expectedReductionData"/>
+
+  <xs:element name="expectedReductionDataList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="expectedReductionData" type="tns:expectedReductionData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="overrideValidationWarnings" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="intervalData" type="tns:intervalData"/>
+
+  <xs:element name="intervalDataList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="intervalData" type="tns:intervalData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="location" type="tns:location"/>
+
+  <xs:element name="locations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="location" type="tns:location" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="registration" type="tns:registration"/>
+
+  <xs:element name="registrationDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registrationId" type="xs:long" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="registrationTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registrationTask" type="tns:registrationTask" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="registrations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registration" type="tns:registration" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="settlement" type="tns:settlement"/>
+
+  <xs:element name="settlements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="settlement" type="tns:settlement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="taskInfoType" type="tns:taskInfoType"/>
+
+  <xs:element name="tasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="taskInfo" type="tns:taskInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="testLoadManagementSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="testLoadManagementEventInfo" type="tns:testLoadManagementEventInfo" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="testPriceResponsiveDemandSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="testPriceResponsiveDemandEventInfo" type="tns:testPriceResponsiveDemandEventInfo" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="registrationLocationSummaryType">
+    <xs:sequence>
+      <xs:element name="energyLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="capacityLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="peakLoadContribution" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterPeakLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="maximumLoadReductionCapability" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testPriceResponsiveDemandEventInfo">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="eventDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="eventType" type="tns:priceResponsiveDemandTestEventTypeEnum" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:time" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="tns:testEventStatusType" nillable="true" minOccurs="0"/>
+      <xs:element name="reTestRegistrations" type="tns:retestRegistrations" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retestRegistrations">
+    <xs:sequence>
+      <xs:element name="reTestRegistration" type="xs:long" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="expectedReductionMeasurementInfoType">
+    <xs:sequence>
+      <xs:element name="inputStartDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="inputEndDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="readingDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="type" type="tns:submissionTypeEnum" minOccurs="0"/>
+      <xs:element name="UOM" type="tns:unitOfMeasure" minOccurs="0"/>
+      <xs:element name="hourValueMeasurement" type="tns:hourValueMeasurement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="latest" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="versionNumber" type="xs:long" minOccurs="0"/>
+      <xs:element name="submittedBy" type="xs:string" minOccurs="0"/>
+      <xs:element name="submittedDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="submissionError" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hourValueMeasurement">
+    <xs:sequence>
+      <xs:element name="hour" type="xs:integer"/>
+      <xs:element name="value" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationOtherType">
+    <xs:sequence>
+      <xs:element name="allowEDCtoModify" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="allowLSEtoModify" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="holdScheduling" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="holdSettlements" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationCapacityType">
+    <xs:sequence>
+      <xs:element name="capacityType" type="xs:string" minOccurs="0"/>
+      <xs:element name="zoneArea" type="xs:string" minOccurs="0"/>
+      <xs:element name="RPMResourceID" type="xs:long" minOccurs="0"/>
+      <xs:element name="measurementMethod" type="tns:measurementMethodEnum" minOccurs="0"/>
+      <xs:element name="capacityLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="peakLoadContribution" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterPeakLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="summerManagedLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterManagedLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="summerWeatherAdjustmentFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterWeatherAdjustmentFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="participantCount" type="xs:long" minOccurs="0"/>
+      <xs:element name="summerNominatedICAP" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterNominatedICAP" type="xs:double" minOccurs="0"/>
+      <xs:element name="annualNominatedICAP" type="xs:double" minOccurs="0"/>
+      <xs:element name="product" type="tns:productTypeEnum" minOccurs="0"/>
+      <xs:element name="resourceType" type="tns:resourceTypeEnum" minOccurs="0"/>
+      <xs:element name="leadTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="leadExceptionReason" type="xs:string" minOccurs="0"/>
+      <xs:element name="leadExceptionDesc" type="xs:string" minOccurs="0"/>
+      <xs:element name="leadExceptionCertify" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="summerOnly" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dailyMeasurementInfoType">
+    <xs:sequence>
+      <xs:element name="readingDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="type" type="tns:submissionTypeEnum" minOccurs="0"/>
+      <xs:element name="UOM" type="tns:unitOfMeasure" minOccurs="0"/>
+      <xs:element name="hourValueMeasurement" type="tns:hourValueMeasurement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="latest" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="versionNumber" type="xs:long" minOccurs="0"/>
+      <xs:element name="submittedBy" type="xs:string" minOccurs="0"/>
+      <xs:element name="submittedDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="submissionError" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="expectedReductionData">
+    <xs:sequence>
+      <xs:element name="summaryInfo" type="tns:expectedReductionSummaryType" minOccurs="0"/>
+      <xs:element name="measurementInfo" type="tns:expectedReductionMeasurementInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="expectedReductionSummaryType">
+    <xs:sequence>
+      <xs:element name="CSPShortName" type="xs:string" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="product" type="tns:productTypeEnum" minOccurs="0"/>
+      <xs:element name="resourceType" type="tns:resourceTypeEnum" minOccurs="0"/>
+      <xs:element name="leadTime" type="tns:leadTimeTypeEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationLocationType">
+    <xs:sequence>
+      <xs:element name="locationID" type="xs:long" minOccurs="0"/>
+      <xs:element name="locationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="address" type="tns:address" minOccurs="0"/>
+      <xs:element name="accountNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="accountNoEdcStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="accountNoLseStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="energyLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="energyLossFactorStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="capacityLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="capacityLossFactorStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="loadReduction" type="xs:double" minOccurs="0"/>
+      <xs:element name="peakLoadContribution" type="xs:double" minOccurs="0"/>
+      <xs:element name="peakLoadContributionStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="winterPeakLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="dy" type="xs:string" minOccurs="0"/>
+      <xs:element name="allowEDCtoSubmitData" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="allowLSEtoSubmitData" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="meterType" type="tns:meterTypeEnum" minOccurs="0"/>
+      <xs:element name="meterStatus" type="tns:meterEquipmentStatusEnum" minOccurs="0"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="pricingPointStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="rerraInfo" type="tns:rerraInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rerraInfoStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="zoneStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="lseEdcReviewStatus" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="participantCount" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="address1" type="xs:string" minOccurs="0"/>
+      <xs:element name="address2" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="state" type="xs:string"/>
+      <xs:element name="zipCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rerraInfoType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="evidence" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="rerra" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="tns:rerraStatusEnum" minOccurs="0"/>
+      <xs:element name="state" type="xs:string" minOccurs="0"/>
+      <xs:element name="version" type="xs:long" minOccurs="0"/>
+      <xs:element name="issueDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locationSiteInfoType">
+    <xs:sequence>
+      <xs:element name="address" type="tns:address" minOccurs="0"/>
+      <xs:element name="businessSegment" type="xs:string" minOccurs="0"/>
+      <xs:element name="utilityResidentialParticipant" type="xs:boolean"/>
+      <xs:element name="participantCount" type="xs:long" minOccurs="0"/>
+      <xs:element name="residentialProgramType" type="tns:residentialProgramTypeEnum" minOccurs="0"/>
+      <xs:element name="loadDataSample" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="sampleNumberParticipants" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="intervalMeasurementInfoType">
+    <xs:sequence>
+      <xs:element name="timestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="type" type="tns:submissionTypeEnum" minOccurs="0"/>
+      <xs:element name="UOM" type="tns:unitOfMeasure" minOccurs="0"/>
+      <xs:element name="value" type="xs:double" minOccurs="0"/>
+      <xs:element name="latest" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="versionNumber" type="xs:long" minOccurs="0"/>
+      <xs:element name="submittedBy" type="xs:string" minOccurs="0"/>
+      <xs:element name="submittedDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="submissionError" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationSummaryType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="program" type="xs:string" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+      <xs:element name="EDC" type="tns:organization" minOccurs="0"/>
+      <xs:element name="LSE" type="tns:organization" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="dispatchGroup" type="xs:string" minOccurs="0"/>
+      <xs:element name="completed" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="testRequired" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="residential" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="lastModifiedDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="organization">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="accountNo" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cblMethodType">
+    <xs:sequence>
+      <xs:element name="methodName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventRegistration">
+    <xs:sequence>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlementSummaryType">
+    <xs:sequence>
+      <xs:element name="referenceId" type="xs:long" minOccurs="0"/>
+      <xs:element name="eventDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="settlementType" type="tns:settlementType" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="invoiceDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="CBLMethod" type="xs:string" minOccurs="0"/>
+      <xs:element name="validAsOfDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="validationMessage" type="xs:string" minOccurs="0"/>
+      <xs:element name="validationStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="adjustment" type="xs:boolean"/>
+      <xs:element name="status" type="tns:settlementStatusType" minOccurs="0"/>
+      <xs:element name="dispatchGroup" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locationProfileInfoType">
+    <xs:sequence>
+      <xs:element name="energyLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="capacityLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="maxLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="loadReduction" type="xs:double" minOccurs="0"/>
+      <xs:element name="peakLoadContribution" type="xs:double" minOccurs="0"/>
+      <xs:element name="winterPeakLoad" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locationReductionInfoType">
+    <xs:sequence>
+      <xs:element name="reductionType" type="tns:loadReductionType" minOccurs="0"/>
+      <xs:element name="reductionValue" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="meterDataSummaryType">
+    <xs:sequence>
+      <xs:element name="locationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="CSPShortName" type="xs:string" minOccurs="0"/>
+      <xs:element name="EDCAccountNumber" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registration">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="summaryInfo" type="tns:registrationSummaryType" minOccurs="0"/>
+      <xs:element name="locationSummaryInfo" type="tns:registrationLocationSummaryType" minOccurs="0"/>
+      <xs:element name="locationInfo" type="tns:registrationLocationType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="generatorCostInfo" type="tns:generatorCostType" minOccurs="0"/>
+      <xs:element name="energyInfo" type="tns:registrationEnergyType" minOccurs="0"/>
+      <xs:element name="priceResponsiveDemandInfo" type="tns:priceResponsiveDemandType" minOccurs="0"/>
+      <xs:element name="capacityInfo" type="tns:registrationCapacityType" minOccurs="0"/>
+      <xs:element name="cblMethodInfo" type="tns:cblMethodType" minOccurs="0"/>
+      <xs:element name="regCblParameters" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="weatherStationName" type="xs:string" minOccurs="0"/>
+            <xs:element name="regCblParameter" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="setpoint" type="xs:long" minOccurs="0"/>
+                  <xs:element name="factor" type="xs:decimal" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="otherInfo" type="tns:registrationOtherType" minOccurs="0"/>
+      <xs:element name="comments" nillable="true" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="comment" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="username" type="xs:string" minOccurs="0"/>
+                  <xs:element name="timestamp" type="xs:dateTime" minOccurs="0"/>
+                  <xs:element name="commentDetails" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generatorCostType">
+    <xs:sequence>
+      <xs:element name="retailRateType" type="tns:retailRateTypeEnum" minOccurs="0"/>
+      <xs:element name="delivery" type="xs:double" minOccurs="0"/>
+      <xs:element name="supply" type="xs:double" minOccurs="0"/>
+      <xs:element name="fuelCost" type="xs:double" minOccurs="0"/>
+      <xs:element name="variableOM" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationEnergyType">
+    <xs:sequence>
+      <xs:element name="loadReduction" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="energyLossFactor" type="xs:double" minOccurs="0"/>
+      <xs:element name="strikePrice" type="xs:double" minOccurs="0"/>
+      <xs:element name="shutdownCosts" type="xs:double" minOccurs="0"/>
+      <xs:element name="contractType" type="xs:string" minOccurs="0"/>
+      <xs:element name="priceNode" type="xs:string" minOccurs="0"/>
+      <xs:element name="retailRate" type="xs:double" minOccurs="0"/>
+      <xs:element name="rateName" type="xs:string" minOccurs="0"/>
+      <xs:element name="rateDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="dayAhead" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="realTime" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="scheduledReserve" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="secondaryReserve" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="synchronizedReserve" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="flexible" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="inflexible" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="regulation" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="batchLoad" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="secrArea" type="tns:srAreaTypeEnum" minOccurs="0"/>
+      <xs:element name="secrSCADATestedAndVerified" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="srArea" type="tns:srAreaTypeEnum" minOccurs="0"/>
+      <xs:element name="srSCADATestedAndVerified" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="regulationSCADAName" type="xs:string" minOccurs="0"/>
+      <xs:element name="regulationSCADATestedAndVerified" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="regulationTestCompleted" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="submeter" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="regulationCertify" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="priceResponsiveDemandType">
+    <xs:sequence>
+      <xs:element name="dynamicRetailRate" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="scadaAvailable" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlementRegistrationType">
+    <xs:sequence>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="priceNode" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="program" type="xs:string" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+      <xs:element name="EDC" type="tns:organization" minOccurs="0"/>
+      <xs:element name="LSE" type="tns:organization" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="dispatchGroup" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="intervalData">
+    <xs:sequence>
+      <xs:element name="summaryInfo" type="tns:meterDataSummaryType" minOccurs="0"/>
+      <xs:element name="measurementInfo" type="tns:intervalMeasurementInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cblCalculation">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="settlementId" type="xs:long" minOccurs="0"/>
+      <xs:element name="reportType" type="tns:reportTypeEnum" minOccurs="0"/>
+      <xs:element name="cblMethod" type="tns:cblMethodTypeEnum" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="rrmse" type="xs:double" minOccurs="0"/>
+      <xs:element name="rrmseResult" type="xs:string" minOccurs="0"/>
+      <xs:element name="numDays" type="xs:int" minOccurs="0"/>
+      <xs:element name="dateRun" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="validAsOfDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="userId" type="xs:string" minOccurs="0"/>
+      <xs:element name="summary" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationTask">
+    <xs:sequence>
+      <xs:element name="registrationId" type="xs:long"/>
+      <xs:element name="locationId" type="xs:long"/>
+      <xs:element name="extension" type="xs:boolean"/>
+      <xs:element name="dueDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="field" type="tns:registrationFieldEnum"/>
+      <xs:element name="stringValue" type="xs:string" minOccurs="0"/>
+      <xs:element name="numberValue" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="dateValue" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="rerra" type="tns:rerraInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="status" type="tns:registrationInputStatusEnum" minOccurs="0"/>
+      <xs:element name="action" type="tns:registrationTaskAction"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testLoadManagementEventInfo">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="eventDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="eventType" type="tns:loadManagementTestEventTypeEnum" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:time" minOccurs="0"/>
+      <xs:element name="regProduct" type="xs:string" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="summerOnly" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="status" type="tns:testEventStatusType" nillable="true" minOccurs="0"/>
+      <xs:element name="reTestRegistrations" type="tns:retestRegistrations" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dispatchGroupDetail">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="validAsOfDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dispatchGroupType" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="scadaName" type="xs:string" minOccurs="0"/>
+      <xs:element name="maximumLoadReductionCapability" type="xs:double" minOccurs="0"/>
+      <xs:element name="registrationDetails" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locationMeterInfoType">
+    <xs:sequence>
+      <xs:element name="meterType" type="tns:meterTypeEnum" minOccurs="0"/>
+      <xs:element name="meterEquipment" type="xs:string" minOccurs="0"/>
+      <xs:element name="meterStatus" type="tns:meterEquipmentStatusEnum" minOccurs="0"/>
+      <xs:element name="reviewDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="interval" type="tns:intervalEnum" minOccurs="0"/>
+      <xs:element name="installationDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="installationQaPlan" type="xs:string" minOccurs="0"/>
+      <xs:element name="certification" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventSummaryInfo">
+    <xs:sequence>
+      <xs:element name="eventDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="eventType" type="xs:string" minOccurs="0"/>
+      <xs:element name="retestType" type="xs:string" minOccurs="0"/>
+      <xs:element name="notifyTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="minimumDownTime" type="xs:int" minOccurs="0"/>
+      <xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="target" type="xs:double" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="acknowledgeDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="price" type="xs:double" minOccurs="0"/>
+      <xs:element name="parentId" type="xs:long" minOccurs="0"/>
+      <xs:element name="regProduct" type="xs:string" minOccurs="0"/>
+      <xs:element name="regResource" type="xs:string" minOccurs="0"/>
+      <xs:element name="regLeadTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="summerOnly" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locationSummaryInfoType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="CSP" type="tns:organization"/>
+      <xs:element name="EDC" type="tns:organization"/>
+      <xs:element name="zone" type="xs:string"/>
+      <xs:element name="status" type="tns:locationStatusEnum" minOccurs="0"/>
+      <xs:element name="allowEDCtoSubmitData" type="xs:boolean"/>
+      <xs:element name="allowLSEtoSubmitData" type="xs:boolean"/>
+      <xs:element name="pricingPoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastModifiedDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlementInfoType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="eventHour" type="xs:int"/>
+      <xs:element name="GMTHour" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="reductionHour" type="xs:boolean"/>
+      <xs:element name="marketType" type="xs:string" minOccurs="0"/>
+      <xs:element name="baseline" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="load" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="reduction" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="lossFactor" type="xs:decimal"/>
+      <xs:element name="scheduled" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="dispatched" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="supply" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="delivery" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="fuelCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="variableOM" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlementTotalInfoType">
+    <xs:sequence>
+      <xs:element name="totalScheduled" type="xs:double" minOccurs="0"/>
+      <xs:element name="totalDispatched" type="xs:double" minOccurs="0"/>
+      <xs:element name="totalLoad" type="xs:double" minOccurs="0"/>
+      <xs:element name="totalCbl" type="xs:double" minOccurs="0"/>
+      <xs:element name="totalReduction" type="xs:double" minOccurs="0"/>
+      <xs:element name="averageLoss" type="xs:double" minOccurs="0"/>
+      <xs:element name="averageSupply" type="xs:double" minOccurs="0"/>
+      <xs:element name="averageDelivery" type="xs:double" minOccurs="0"/>
+      <xs:element name="averageFuelCost" type="xs:double" minOccurs="0"/>
+      <xs:element name="averageVariableOM" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlementOtherInfoType">
+    <xs:sequence>
+      <xs:element name="comments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventDetail">
+    <xs:sequence>
+      <xs:element name="event" type="tns:event" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="event">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="parentId" type="xs:long" minOccurs="0"/>
+      <xs:element name="eventRegistration" type="tns:eventRegistration" minOccurs="0"/>
+      <xs:element name="eventDispatchGroup" type="tns:eventDispatchGroup" minOccurs="0"/>
+      <xs:element name="eventType" type="xs:string" minOccurs="0"/>
+      <xs:element name="notifyTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="acknowledgeDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="target" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventDispatchGroup">
+    <xs:sequence>
+      <xs:element name="dispatchGroupId" type="xs:long" minOccurs="0"/>
+      <xs:element name="dispatchGroupName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlement">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="summaryInfo" type="tns:settlementSummaryType" minOccurs="0"/>
+      <xs:element name="registrationInfo" type="tns:settlementRegistrationType" minOccurs="0"/>
+      <xs:element name="settlementInfo" type="tns:settlementInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="totalInfo" type="tns:settlementTotalInfoType" minOccurs="0"/>
+      <xs:element name="otherInfo" type="tns:settlementOtherInfoType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="location">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="summaryInfo" type="tns:locationSummaryInfoType" minOccurs="0"/>
+      <xs:element name="siteInfo" type="tns:locationSiteInfoType" minOccurs="0"/>
+      <xs:element name="profileInfo" type="tns:locationProfileInfoType" minOccurs="0"/>
+      <xs:element name="reductionInfo" type="tns:locationReductionInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="generatorCount" type="xs:long" minOccurs="0"/>
+      <xs:element name="generatorInfo" type="tns:generator" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="batteryInfo" type="tns:battery" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="meterInfo" type="tns:locationMeterInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rerraInfo" type="tns:rerraInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generator">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="nonRetailBtmg" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="maxOutput" type="xs:double" minOccurs="0"/>
+      <xs:element name="nameplate" type="xs:double" minOccurs="0"/>
+      <xs:element name="backupGeneratorOnly" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="generatorType" type="xs:string" minOccurs="0"/>
+      <xs:element name="fuelType" type="xs:string" minOccurs="0"/>
+      <xs:element name="vintage" type="xs:long" minOccurs="0"/>
+      <xs:element name="retrofitYear" type="xs:long" minOccurs="0"/>
+      <xs:element name="permitStatus" type="tns:generatorPermitStatusEnum" minOccurs="0"/>
+      <xs:element name="permitType" type="tns:generatorPermitTypeEnum" minOccurs="0"/>
+      <xs:element name="agreementType" type="tns:generatorAgreementTypeEnum" minOccurs="0"/>
+      <xs:element name="injectionRight" type="xs:double" minOccurs="0"/>
+      <xs:element name="note" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="battery">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="maxOutput" type="xs:double" minOccurs="0"/>
+      <xs:element name="capacity" type="xs:double" minOccurs="0"/>
+      <xs:element name="vintage" type="xs:long" minOccurs="0"/>
+      <xs:element name="chemistry" type="tns:batteryChemistryType" minOccurs="0"/>
+      <xs:element name="type" type="tns:batteryType" minOccurs="0"/>
+      <xs:element name="agreementType" type="tns:generatorAgreementTypeEnum" minOccurs="0"/>
+      <xs:element name="injectionRight" type="xs:double" minOccurs="0"/>
+      <xs:element name="note" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventSummary">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="eventSummaryInfo" type="tns:eventSummaryInfo" minOccurs="0"/>
+      <xs:element name="eventDetail" type="tns:eventDetail"/>
+      <xs:element name="marketHoursInfo" type="tns:marketHour" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="marketHour">
+    <xs:sequence>
+      <xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="lmp" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="marginalCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="pai" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="taskInfoType">
+    <xs:sequence>
+      <xs:element name="taskName" type="xs:string" minOccurs="0"/>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="registrationStatus" type="tns:registrationStatusEnum" minOccurs="0"/>
+      <xs:element name="settlementId" type="xs:long" minOccurs="0"/>
+      <xs:element name="settlementStatus" type="tns:settlementStatusType" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+      <xs:element name="EDC" type="tns:organization" minOccurs="0"/>
+      <xs:element name="LSE" type="tns:organization" minOccurs="0"/>
+      <xs:element name="taskDue" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dailyData">
+    <xs:sequence>
+      <xs:element name="summaryInfo" type="tns:meterDataSummaryType" minOccurs="0"/>
+      <xs:element name="measurementInfo" type="tns:dailyMeasurementInfoType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="compliance">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="complianceDetail" type="tns:complianceDetail" minOccurs="0"/>
+      <xs:element name="complianceValidation" type="tns:complianceValidation" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="complianceDetail">
+    <xs:sequence>
+      <xs:element name="registrationId" type="xs:long" minOccurs="0"/>
+      <xs:element name="zone" type="xs:string" minOccurs="0"/>
+      <xs:element name="CSP" type="tns:organization" minOccurs="0"/>
+      <xs:element name="EDC" type="tns:organization" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="eventDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dueDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="status" type="tns:complianceStatusType" minOccurs="0"/>
+      <xs:element name="complianceType" type="tns:complianceType" minOccurs="0"/>
+      <xs:element name="comments" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="complianceValidation">
+    <xs:sequence>
+      <xs:element name="measurementMethod" type="xs:string" minOccurs="0"/>
+      <xs:element name="summary" type="xs:string" minOccurs="0"/>
+      <xs:element name="valid" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="validAsOf" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="priceResponsiveDemandTestEventTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TEST_PRICE_RESPONSIVE_DEMAND_SUMMARY"/>
+      <xs:enumeration value="RETEST_PRICE_RESPONSIVE_DEMAND_SUMMARY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="testEventStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="CONFIRMED"/>
+      <xs:enumeration value="SCHEDULED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="submissionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EXPECTED_REDUCTION"/>
+      <xs:enumeration value="ADD_BACK"/>
+      <xs:enumeration value="MINUTE_LOAD"/>
+      <xs:enumeration value="FIVE_MINUTE_LOAD"/>
+      <xs:enumeration value="HOURLY_LOAD"/>
+      <xs:enumeration value="HOURLY_GEN"/>
+      <xs:enumeration value="MANUAL_CBL"/>
+      <xs:enumeration value="GLD_COMPARE_DAY"/>
+      <xs:enumeration value="GLD_PROFILE"/>
+      <xs:enumeration value="GLD_REGRESSION"/>
+      <xs:enumeration value="GLD_SAME_DAY"/>
+      <xs:enumeration value="GLD_SIMILAR_DAY"/>
+      <xs:enumeration value="GLD_GENERATION"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="unitOfMeasure">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="measurementMethodEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIRM_SERVICE_LEVEL"/>
+      <xs:enumeration value="GUARANTEED_LOAD_DROP"/>
+      <xs:enumeration value="GUARANTEED_LOAD_DROP_BYGEN"/>
+      <xs:enumeration value="MESL"/>
+      <xs:enumeration value="PILOT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="productTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BASE_DR"/>
+      <xs:enumeration value="CAPACITY_PERFORMANCE_DR"/>
+      <xs:enumeration value="LIMITED_DR"/>
+      <xs:enumeration value="EXTENDED_SUMMER_DR"/>
+      <xs:enumeration value="ANNUAL_DR"/>
+      <xs:enumeration value="PRICE_RESPONSIVE_DEMAND"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="resourceTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMERGENCY"/>
+      <xs:enumeration value="PRE_EMERGENCY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="leadTimeTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LONG_120"/>
+      <xs:enumeration value="SHORT_60"/>
+      <xs:enumeration value="QUICK_30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registrationInputStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="APPROVED_AS_MODIFIED"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="NO_ACTION_NEEDED"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="WITHDRAWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="meterTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CSP_METER"/>
+      <xs:enumeration value="EDC_METER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="meterEquipmentStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="PENDING"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="rerraStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="residentialProgramTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DLC"/>
+      <xs:enumeration value="BEHAVIOR_INCENTIVE"/>
+      <xs:enumeration value="BEHAVIOR_PENALTY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="settlementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMERGENCY_ENERGY"/>
+      <xs:enumeration value="ECONOMIC_ENERGY"/>
+      <xs:enumeration value="TEST_EMERGENCY_ENERGY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="settlementStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONFIRMED"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="DENIED_BY_PJM"/>
+      <xs:enumeration value="DISPUTED"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="INCOMPLETE"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="PENDING_PJM"/>
+      <xs:enumeration value="WITHDRAWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="loadReductionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BATTERIES"/>
+      <xs:enumeration value="GENERATOR"/>
+      <xs:enumeration value="HVAC"/>
+      <xs:enumeration value="LIGHTING"/>
+      <xs:enumeration value="MANUFACTURING"/>
+      <xs:enumeration value="PLUG_LOAD"/>
+      <xs:enumeration value="REFRIGERATION"/>
+      <xs:enumeration value="WATER_HEATERS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="retailRateTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAY_AHEAD_LMP"/>
+      <xs:enumeration value="FIXED_PRICE"/>
+      <xs:enumeration value="REAL_TIME_LMP"/>
+      <xs:enumeration value="OTHER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="srAreaTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAD"/>
+      <xs:enumeration value="RTO"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="reportTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RRMSE"/>
+      <xs:enumeration value="CBL_DETAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cblMethodTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SAME_DAY"/>
+      <xs:enumeration value="MATCH_DAY"/>
+      <xs:enumeration value="THREE_DAY_TYPES"/>
+      <xs:enumeration value="THREE_DAY_TYPE_SAA"/>
+      <xs:enumeration value="THREE_DAY_TYPE_WSA"/>
+      <xs:enumeration value="FIVE_DAY_TYPES"/>
+      <xs:enumeration value="FIVE_DAY_TYPE_SAA"/>
+      <xs:enumeration value="FIVE_DAY_TYPE_WSA"/>
+      <xs:enumeration value="SEVEN_DAY_TYPES"/>
+      <xs:enumeration value="SEVEN_DAY_TYPE_SAA"/>
+      <xs:enumeration value="SEVEN_DAY_TYPE_WSA"/>
+      <xs:enumeration value="MANUAL"/>
+      <xs:enumeration value="METERED_GENERATION"/>
+      <xs:enumeration value="NON_HOURLY_METERED"/>
+      <xs:enumeration value="NON_HOURLY_METERED_DLC"/>
+      <xs:enumeration value="HOUR_BEFORE_EMERGENCY"/>
+      <xs:enumeration value="FIRM_SERVICE_LEVEL"/>
+      <xs:enumeration value="GUARANTEED_LOAD_DROP"/>
+      <xs:enumeration value="GUARANTEED_LOAD_DROP_VIA_GENERATION"/>
+      <xs:enumeration value="NEW_CBL_METHOD"/>
+      <xs:enumeration value="AS_SYNC_RESERVE"/>
+      <xs:enumeration value="AS_DAY_SCHED_RESERVE"/>
+      <xs:enumeration value="MAX_BASE_LOAD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registrationFieldEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW_EDC"/>
+      <xs:enumeration value="ALLOW_LSE"/>
+      <xs:enumeration value="ANCILLARY_SERVICE_REVIEW_STATUS"/>
+      <xs:enumeration value="ANCILLARY_SERVICE_REVIEW_TYPE"/>
+      <xs:enumeration value="ANCILLARY_SERVICE_COMMENT"/>
+      <xs:enumeration value="ANNUAL_ICAP"/>
+      <xs:enumeration value="AUCTION_RESOURCE"/>
+      <xs:enumeration value="AVERAGE_CAPACITY_LOSS_FACTOR"/>
+      <xs:enumeration value="AVERAGE_ENERGY_LOSS_FACTOR"/>
+      <xs:enumeration value="BATCH_LOAD"/>
+      <xs:enumeration value="CAPACITY_LOSS_FACTOR"/>
+      <xs:enumeration value="CAPACITY_LOSS_FACTOR_STATUS"/>
+      <xs:enumeration value="CBL_METHOD"/>
+      <xs:enumeration value="CERTIFY_CLAIM_FLAG"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="COMPLETED_BY_EDC"/>
+      <xs:enumeration value="COMPLETED_BY_LSE"/>
+      <xs:enumeration value="DA_ENERGY"/>
+      <xs:enumeration value="DASR"/>
+      <xs:enumeration value="DELIVERY"/>
+      <xs:enumeration value="DISPATCH_GROUP"/>
+      <xs:enumeration value="DYNAMIC_RETAIL_RATE"/>
+      <xs:enumeration value="EDC_ACCOUNT_NUMBER"/>
+      <xs:enumeration value="EDC_ACCOUNT_NUMBER_EDC_STATUS"/>
+      <xs:enumeration value="EDC_ACCOUNT_NUMBER_LSE_STATUS"/>
+      <xs:enumeration value="EDC_METER"/>
+      <xs:enumeration value="EDC_METER_STATUS"/>
+      <xs:enumeration value="EFFECTIVE_DATE"/>
+      <xs:enumeration value="ENERGY_LOSS_FACTOR"/>
+      <xs:enumeration value="ENERGY_LOSS_FACTOR_STATUS"/>
+      <xs:enumeration value="EXT_EDC_ACCOUNT_NUMBER"/>
+      <xs:enumeration value="EXT_EDC_ACCOUNT_NUMBER_STATUS"/>
+      <xs:enumeration value="EXT_EDC_METER"/>
+      <xs:enumeration value="EXT_ENERGY_LOSS_FACTOR"/>
+      <xs:enumeration value="EXT_ENERGY_LOSS_FACTOR_STATUS"/>
+      <xs:enumeration value="EXT_LSE"/>
+      <xs:enumeration value="EXT_LSE_EDC_REVIEW_STATUS"/>
+      <xs:enumeration value="EXT_PRICING_POINT"/>
+      <xs:enumeration value="EXT_PRICING_POINT_STATUS"/>
+      <xs:enumeration value="EXT_TERMINATE_DATE"/>
+      <xs:enumeration value="EXT_EDC_TERMINATE_DATE_STATUS"/>
+      <xs:enumeration value="EXT_LSE_TERMINATE_DATE_STATUS"/>
+      <xs:enumeration value="EXT_ZONE"/>
+      <xs:enumeration value="EXT_ZONE_STATUS"/>
+      <xs:enumeration value="EXTENSION_STATUS"/>
+      <xs:enumeration value="FLEXIBLE"/>
+      <xs:enumeration value="FUEL_COST"/>
+      <xs:enumeration value="HAS_BATTERY_GENERATOR"/>
+      <xs:enumeration value="HOLD_SCHEDULING"/>
+      <xs:enumeration value="HOLD_SETTLEMENT"/>
+      <xs:enumeration value="INFLEXIBLE"/>
+      <xs:enumeration value="LEAD_EX_CERTIFIED"/>
+      <xs:enumeration value="LEAD_EX_DESCRIPTION"/>
+      <xs:enumeration value="LEAD_REASON"/>
+      <xs:enumeration value="LEAD_TIME_TYPE"/>
+      <xs:enumeration value="LSE"/>
+      <xs:enumeration value="LSE_EDC_REVIEW_STATUS"/>
+      <xs:enumeration value="MANAGED_LOAD"/>
+      <xs:enumeration value="MEASUREMENT_METHOD"/>
+      <xs:enumeration value="MULTIPLIER"/>
+      <xs:enumeration value="NAME"/>
+      <xs:enumeration value="NEW_TERMINATE_DATE"/>
+      <xs:enumeration value="NOMINATED_LOAD"/>
+      <xs:enumeration value="PARTICIPANTS_COUNT"/>
+      <xs:enumeration value="PEAK_LOAD_CONTRIBUTION"/>
+      <xs:enumeration value="PEAK_LOAD_CONTRIBUTION_SUM"/>
+      <xs:enumeration value="PEAK_LOAD_CONTRIBUTION_STATUS"/>
+      <xs:enumeration value="PRICING_POINT"/>
+      <xs:enumeration value="PRICING_POINT_STATUS"/>
+      <xs:enumeration value="PRODUCT_TYPE"/>
+      <xs:enumeration value="PROGRAM"/>
+      <xs:enumeration value="REG_SECR_SCADA_TEST_FLAG"/>
+      <xs:enumeration value="REG_SR_SCADA_TEST_FLAG"/>
+      <xs:enumeration value="REGULATION"/>
+      <xs:enumeration value="REGULATION_DISPATCH_GROUP"/>
+      <xs:enumeration value="REGULATION_TEST_COMPLETE_FLAG"/>
+      <xs:enumeration value="RERRA"/>
+      <xs:enumeration value="RERRA_EDC_STATUS"/>
+      <xs:enumeration value="EXT_RERRA_EDC_STATUS"/>
+      <xs:enumeration value="RESIDENTIAL_REGISTRATION_FLAG"/>
+      <xs:enumeration value="RESOURCE_TYPE"/>
+      <xs:enumeration value="RETAIL_RATE_TYPE"/>
+      <xs:enumeration value="RT_ENERGY"/>
+      <xs:enumeration value="SCADA_AVAILABLE"/>
+      <xs:enumeration value="SCADA_NAME"/>
+      <xs:enumeration value="SCADA_TEST_AND_VERIFIED_FLAG"/>
+      <xs:enumeration value="SECONDARY_RESERVE"/>
+      <xs:enumeration value="SECONDARY_RESERVE_AREA"/>
+      <xs:enumeration value="SHUT_DOWN_COST"/>
+      <xs:enumeration value="SR_AREA"/>
+      <xs:enumeration value="STATUS"/>
+      <xs:enumeration value="STRIKE_PRICE"/>
+      <xs:enumeration value="SUBMETER"/>
+      <xs:enumeration value="SUMMER_ONLY"/>
+      <xs:enumeration value="SUPPLY"/>
+      <xs:enumeration value="SYNC_RESERVE"/>
+      <xs:enumeration value="TERMINATE_DATE"/>
+      <xs:enumeration value="TEST_REQUIRED"/>
+      <xs:enumeration value="TOTAL_LOAD_REDUCTION"/>
+      <xs:enumeration value="VARIABLE"/>
+      <xs:enumeration value="WINTER_ADJUSTMENT_FACTOR"/>
+      <xs:enumeration value="WINTER_MANAGED_LOAD"/>
+      <xs:enumeration value="WINTER_NOMINATED_LOAD"/>
+      <xs:enumeration value="WINTER_PEAK_LOAD"/>
+      <xs:enumeration value="WINTER_PEAK_LOAD_METHOD"/>
+      <xs:enumeration value="WINTER_PEAK_LOAD_STATUS"/>
+      <xs:enumeration value="WINTER_PEAK_LOAD_SUM"/>
+      <xs:enumeration value="ZONE"/>
+      <xs:enumeration value="ZONE_STATUS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registrationTaskAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APPROVE"/>
+      <xs:enumeration value="DENY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="loadManagementTestEventTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TEST_LOAD_MANAGEMENT_SUMMARY"/>
+      <xs:enumeration value="RETEST_LOAD_MANAGEMENT_SUMMARY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="intervalEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MINUTE"/>
+      <xs:enumeration value="HOURLY"/>
+      <xs:enumeration value="TELEMETRY"/>
+      <xs:enumeration value="OTHER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="locationStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="NEW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="generatorPermitStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AVAILABLE"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="NOT_APPLICABLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="generatorPermitTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMERGENCY_ONLY"/>
+      <xs:enumeration value="NON_EMERGENCY"/>
+      <xs:enumeration value="NONE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="generatorAgreementTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="WMPA"/>
+      <xs:enumeration value="ISA"/>
+      <xs:enumeration value="NEM_OTHER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="batteryChemistryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LEAD_ACID"/>
+      <xs:enumeration value="LITHIUM_AIR"/>
+      <xs:enumeration value="LITHIUM_ION"/>
+      <xs:enumeration value="LITHIUM_METAL"/>
+      <xs:enumeration value="LITHIUM_SULFUR"/>
+      <xs:enumeration value="MAGNESIUM_ION"/>
+      <xs:enumeration value="MAGNESIUM_LITHIUM_HYBRID"/>
+      <xs:enumeration value="ORGANIC_AQUEOUS_FLOW"/>
+      <xs:enumeration value="SODIUM_ION"/>
+      <xs:enumeration value="SODIUM_METAL_HALIDE"/>
+      <xs:enumeration value="VANADIUM_REDOX_FLOW"/>
+      <xs:enumeration value="ZINC_ION"/>
+      <xs:enumeration value="ZINC_MANGANESE_OXIDE"/>
+      <xs:enumeration value="ZINC_POLYIODIDE_FLOW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="batteryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ELECTRIC_VEHICLE"/>
+      <xs:enumeration value="PV_SYSTEM"/>
+      <xs:enumeration value="STAND_ALONE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registrationStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONFIRMED"/>
+      <xs:enumeration value="CONFIRMED_EXTENSION"/>
+      <xs:enumeration value="DENIED"/>
+      <xs:enumeration value="DISPUTED"/>
+      <xs:enumeration value="DUPLICATE"/>
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="PENDING_PJM"/>
+      <xs:enumeration value="TERMINATED"/>
+      <xs:enumeration value="TERMINATED_DUPLICATE"/>
+      <xs:enumeration value="WITHDRAWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="complianceStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONFIRMED"/>
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="INCOMPLETE"/>
+      <xs:enumeration value="NEW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="complianceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOAD_MANAGEMENT"/>
+      <xs:enumeration value="SYNCHRONIZED_RESERVE"/>
+      <xs:enumeration value="DAY_AHEAD_SCHED_RESERVE"/>
+      <xs:enumeration value="LOAD_MANAGEMENT_TEST"/>
+      <xs:enumeration value="LOAD_MANAGEMENT_RETEST"/>
+      <xs:enumeration value="PRICE_RESPONSIVE_DEMAND"/>
+      <xs:enumeration value="PRICE_RESPONSIVE_DEMAND_TEST"/>
+      <xs:enumeration value="PRICE_RESPONSIVE_DEMAND_RETEST"/>
+      <xs:enumeration value="SECONDARY_RESERVE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
