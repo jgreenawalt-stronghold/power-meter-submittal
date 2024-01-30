@@ -41,7 +41,9 @@ def get_hourly_value(path, session):
         response = session.get(path, headers=pi_headers, verify=False)
         if response.status_code == 200:
             r = response.json()
-            data = format(round(r["Items"][0]["Value"]["Value"], 3), ".3f")
+            data = (round(r["Items"][0]["Value"]["Value"], 3))
+            if data == 0.0:
+                return 0
             return data
     except Exception as e:
         print(f'Error: {e}')
@@ -67,9 +69,8 @@ def get_daily_values(web_id):
     pi_url_body = f"/summary/?summaryType=Average&startTime={start_time}&endTime={end_time}&interval={interval}"
     path = pi_url_prefix + web_id + pi_url_body 
     data.append(get_hourly_value(path, session))
-    print(data)
     return data
-    
+
 # Format the data into XML
 
 def write_xml_header():
