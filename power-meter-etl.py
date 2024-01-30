@@ -33,10 +33,8 @@ interval = "1m"
 today = date.today()
 yesterday = today - timedelta(days=1)
 
-
 pi_headers = {"Content-type": "application/json", "X-Requested-With": "XmlHttpRequest"}
 pi_url_prefix = "https://10.20.145.224/piwebapi/streams/"
-
 
 def get_hourly_value(path, session):
     try:
@@ -71,47 +69,55 @@ def get_daily_values(web_id):
     data.append(get_hourly_value(path, session))
     print(data)
     return data
+    
+# Format the data into XML
 
-def initiate_xml():
-    with open('submission.xml', 'w') as xml:
-        xml.write()
-    pass
+def write_xml_header():
+    with open('submission.xml', 'a') as xml:
+        xml.write('<ns2:MeterValues>\n')
 
-def get_time_values():
-    time = []
-    for i in range(23):
-        start_time = f"{yesterday.strftime('%m/%d/%Y')}T{str(i).zfill(2)}:00:00.000-05:00"
-        end_time = f"{yesterday.strftime('%m/%d/%Y')}T{str(i+1).zfill(2)}:00:00.000-05:00"
-        time.append(start_time)
-        time.append(end_time)
-    start_time = f"{yesterday.strftime('%m/%d/%Y')}T23:00:00.000-05:00"
-    end_time = f"{today.strftime('%m/%d/%Y')}T00:00:00.000-05:00"
-    time.append(start_time)
-    time.append(end_time)
-    return time
+def write_xml_footer():
+    with open('submission.xml', 'a') as xml:
+        xml.write('<totalLoss/>\n')
+        xml.write('<totalInadvertent/>\n')
+        xml.write('</ns2:MeterValues>\n')
 
-def write_xml(meter_info, meter_list, time_values, daily_values):
+def write_xml(meter_info, meter_list, daily_values):
     with open('submission.xml', 'a') as xml:
         xml.write('<meterAccount>\n')
         for info, entry in zip(meter_info, meter_list):
             xml.write(f'<{info}>{entry}</{info}>\n')
-        for time, value in zip(time_values, daily_values):
-            xml.write(f'<intervalValue>')
-            xml.write(f'<')
+        xml.write('<hourlyMeterValues>\n')
+        for i , value in zip(range(23), daily_values):
+            start_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i).zfill(2)}:00:00.000-05:00"
+            end_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i+1).zfill(2)}:00:00.000-05:00"
+            xml.write(f'<intervalValue>\n')
+            xml.write(f'<startDate>{start_time}</startDate>\n')
+            xml.write(f'<endDate>{end_time}</endDate>\n')
             xml.write(f'<mw>{value}</mw>\n')
+            xml.write(f'</intervalValue>\n')
+        start_time = f"{yesterday.strftime('%Y-%m-%d')}T23:00:00.000-05:00"
+        end_time = f"{today.strftime('%Y-%m-%d')}T00:00:00.000-5:00"
+        xml.write('<intervalValue>\n')
+        xml.write(f'<startDate>{start_time}</startDate>\n')
+        xml.write(f'<endDate>{end_time}</endDate>\n')
+        xml.write(f'<mw>{daily_values[23]}</mw>\n')
+        xml.write('</intervalValue>\n')
+        xml.write('</hourlyMeterValues>\n')
         xml.write('</meterAccount>\n')
 
-# Format the data into XML
-time_values = get_time_values()
+
 meter_info = ['meterAccountID', 'meterAccountName', 'meterType', 'ehv', 'counterParty']
 sg_3351 = ['3351', 'Scrubgrass', 'GEN', 'NO', 'PaElec']
 sg_poi = ['10567', 'Scrubgrass POI Info-Meter', 'GEN', 'NO', 'PaElec']
 sg_ss = ['10568', 'Scrubgrass SS Info-Meter', 'GEN', 'NO', 'PaElec']
 
 def main():
-    write_xml(meter_info, sg_3351, time_values, get_daily_values(get_web_id("MAPCScrubgrass3351", pidata)))
-    write_xml(meter_info, sg_poi, time_values, get_daily_values(get_web_id("MAJT402", pidata)))
-    write_xml(meter_info, sg_ss, time_values, get_daily_values(get_web_id("PARASITE", pidata)))
+    write_xml_header()
+    write_xml(meter_info, sg_3351, get_daily_values(get_web_id("MAPCScrubgrass3351", pidata)))
+    write_xml(meter_info, sg_poi, get_daily_values(get_web_id("MAJT402", pidata)))
+    write_xml(meter_info, sg_ss, get_daily_values(get_web_id("PARASITE", pidata)))
+    write_xml_footer()
 
 main()
 
