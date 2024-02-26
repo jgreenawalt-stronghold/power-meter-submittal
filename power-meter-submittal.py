@@ -75,13 +75,12 @@ def get_daily_values(web_id):
 
 def write_xml_header():
     with open('submission.xml', 'a') as xml:
-        xml.write('<ns2:MeterValues>\n')
+        xml.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        xml.write('<pm:SubmittedMeterValues xsi:schemaLocation="http://www.pjm.com/soa/schemas/external/pm/v1 powermeter.xsd" xmlns:pm="http://www.pjm.com/soa/schemas/external/pm/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n')
 
 def write_xml_footer():
     with open('submission.xml', 'a') as xml:
-        xml.write('<totalLoss/>\n')
-        xml.write('<totalInadvertent/>\n')
-        xml.write('</ns2:MeterValues>\n')
+        xml.write('</pm:SubmittedMeterValues>\n')
 
 def write_xml(meter_info, meter_list, daily_values):
     with open('submission.xml', 'a') as xml:
