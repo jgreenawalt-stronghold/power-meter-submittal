@@ -72,6 +72,9 @@ def get_daily_values(web_id):
     return data
 
 # Format the data into XML
+def clear_data():
+    with open('submission.xml', 'w') as xml:
+        xml.truncate(0)
 
 def write_xml_header():
     with open('submission.xml', 'a') as xml:
@@ -113,6 +116,7 @@ sg_poi = ['10567']
 sg_ss = ['10568']
 
 def main():
+    clear_data()
     write_xml_header()
     write_xml(meter_info, sg_3351, get_daily_values(get_web_id("MAPCScrubgrass3351", pidata)))
     write_xml(meter_info, sg_poi, get_daily_values(get_web_id("MAJT402", pidata)))
