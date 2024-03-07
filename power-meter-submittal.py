@@ -87,7 +87,7 @@ def write_xml(meter_info, meter_list, daily_values):
         xml.write('<meterAccount>\n')
         for info, entry in zip(meter_info, meter_list):
             xml.write(f'<{info}>{entry}</{info}>\n')
-        xml.write('<hourlyMeterValues>\n')
+        xml.write('<meterValues>\n')
         for i , value in zip(range(23), daily_values):
             start_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i).zfill(2)}:00:00.000-05:00"
             end_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i+1).zfill(2)}:00:00.000-05:00"
@@ -103,14 +103,14 @@ def write_xml(meter_info, meter_list, daily_values):
         xml.write(f'<endDate>{end_time}</endDate>\n')
         xml.write(f'<mw>{daily_values[23]}</mw>\n')
         xml.write('</intervalValue>\n')
-        xml.write('</hourlyMeterValues>\n')
+        xml.write('</meterValues>\n')
         xml.write('</meterAccount>\n')
 
 
-meter_info = ['meterAccountID', 'meterAccountName', 'meterType', 'ehv', 'counterParty']
-sg_3351 = ['3351', 'Scrubgrass', 'GEN', 'NO', 'PaElec']
-sg_poi = ['10567', 'Scrubgrass POI Info-Meter', 'GEN', 'NO', 'PaElec']
-sg_ss = ['10568', 'Scrubgrass SS Info-Meter', 'GEN', 'NO', 'PaElec']
+meter_info = ['meterAccountID']
+sg_3351 = ['3351']
+sg_poi = ['10567']
+sg_ss = ['10568']
 
 def main():
     write_xml_header()
