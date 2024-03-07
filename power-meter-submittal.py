@@ -96,8 +96,8 @@ def write_xml(meter_info, meter_list, daily_values):
             xml.write(f'<endDate>{end_time}</endDate>\n')
             xml.write(f'<mw>{value}</mw>\n')
             xml.write(f'</intervalValue>\n')
-        start_time = f"{yesterday.strftime('%Y-%m-%d')}T23:00:00.000-05:00"
-        end_time = f"{today.strftime('%Y-%m-%d')}T00:00:00.000-5:00"
+        start_time = f"{yesterday.strftime('%Y-%m-%d')}T23:00:00-05:00"
+        end_time = f"{today.strftime('%Y-%m-%d')}T00:00:00-5:00"
         xml.write('<intervalValue>\n')
         xml.write(f'<startDate>{start_time}</startDate>\n')
         xml.write(f'<endDate>{end_time}</endDate>\n')
