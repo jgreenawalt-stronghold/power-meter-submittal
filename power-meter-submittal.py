@@ -92,15 +92,15 @@ def write_xml(meter_info, meter_list, daily_values):
             xml.write(f'<{info}>{entry}</{info}>\n')
         xml.write('<meterValues>\n')
         for i , value in zip(range(23), daily_values):
-            start_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i).zfill(2)}:00:00-05:00"
-            end_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i+1).zfill(2)}:00:00-05:00"
+            start_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i).zfill(2)}:00:00-04:00"
+            end_time = f"{yesterday.strftime('%Y-%m-%d')}T{str(i+1).zfill(2)}:00:00-04:00"
             xml.write(f'<intervalValue>\n')
             xml.write(f'<startDate>{start_time}</startDate>\n')
             xml.write(f'<endDate>{end_time}</endDate>\n')
             xml.write(f'<mw>{value}</mw>\n')
             xml.write(f'</intervalValue>\n')
-        start_time = f"{yesterday.strftime('%Y-%m-%d')}T23:00:00-05:00"
-        end_time = f"{today.strftime('%Y-%m-%d')}T00:00:00-05:00"
+        start_time = f"{yesterday.strftime('%Y-%m-%d')}T23:00:00-04:00"
+        end_time = f"{today.strftime('%Y-%m-%d')}T00:00:00-04:00"
         xml.write('<intervalValue>\n')
         xml.write(f'<startDate>{start_time}</startDate>\n')
         xml.write(f'<endDate>{end_time}</endDate>\n')
