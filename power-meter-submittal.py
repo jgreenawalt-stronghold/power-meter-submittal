@@ -71,6 +71,9 @@ def get_daily_values(web_id):
     data.append(get_hourly_value(path, session))
     return data
 
+def restart_pi_analysis_service():
+    pass
+
 # Format the data into XML
 def clear_data():
     with open('submission.xml', 'w') as xml:
@@ -116,10 +119,18 @@ sg_poi = ['10567']
 sg_ss = ['10568']
 
 def main():
+    sg_3351_hrl = get_daily_values(get_web_id("MAPCScrubgrass3351", pidata))
+    check_for_none = None in sg_3351 ## Checks for None type values in list of hourly values returned from PI database.
+    net_hrl = get_daily_values(get_web_id("MAJT402", pidata))
     clear_data()
     write_xml_header()
-    write_xml(meter_info, sg_3351, get_daily_values(get_web_id("MAPCScrubgrass3351", pidata)))
-    write_xml(meter_info, sg_poi, get_daily_values(get_web_id("MAJT402", pidata)))
+    if check_for_none: ## Check is True
+        sg_3351_hrl_calc = [max(0, x) for x in net_hrl] ## Copies net_hrl list and replaces any value < 0 with 0.
+        write_xml(meter_info, sg_3351, sg_3351_hrl_calc)  ## Writes calculated values if None is returned from PI(meaning Analysis Service has failed)  
+        restart_pi_analysis_service()
+    else: 
+            write_xml(meter_info, sg_3351, sg_3351_hrl) ## Uses PI Analysis Service generated values for 3351 meter.
+    write_xml(meter_info, sg_poi, net_hrl)
     write_xml(meter_info, sg_ss, get_daily_values(get_web_id("PARASITE", pidata)))
     write_xml_footer()
 
