@@ -77,6 +77,8 @@ def get_daily_values(web_id):
 def restart_pi_analysis_service():
     user = os.getenv('WINRM_USERNAME')
     password = os.getenv('WINRM_PASSWORD')
+    server = os.getenv('PI_SERVER')
+    port = os.getenv('PORT')
     if not user or not password:
         raise ValueError("WINRM_USERNAME or WINRM_PASSWORD environment variables are not set.")
     session = winrm.Session(f'http://{PI_SERVER}:{PORT}/wsman', auth=(user, password), transport='ntlm') 
@@ -146,7 +148,7 @@ def main():
     write_xml(meter_info, sg_poi, net_hrl)
     write_xml(meter_info, sg_ss, get_daily_values(get_web_id("PARASITE", pidata)))
     write_xml_footer()
-
+    print(path)
 main()
 
 
