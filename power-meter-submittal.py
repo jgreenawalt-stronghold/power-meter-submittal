@@ -148,7 +148,6 @@ def main():
     write_xml(meter_info, sg_poi, net_hrl)
     write_xml(meter_info, sg_ss, get_daily_values(get_web_id("PARASITE", pidata)))
     write_xml_footer()
-    print(path)
 main()
 
 
