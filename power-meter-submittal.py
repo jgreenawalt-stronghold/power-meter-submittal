@@ -1,9 +1,11 @@
+from dotenv import load_dotenv
 import urllib3
 import requests
+import winrm
 from datetime import date, timedelta
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
+load_dotenv()
 # Query the PIWebAPI and gather the hourly data for Tag values
 
 pidata = {
@@ -23,8 +25,8 @@ pidata = {
     ]
 }
 
-pi_user = "piwebapi_write"
-pi_password = "nNRf7USFQ6ca&1"
+pi_user = os.getenv('PI_USER')
+pi_password = os.getenv('PI_PASSWORD')
 
 session = requests.Session()
 session.auth = (pi_user, pi_password)
@@ -34,7 +36,7 @@ today = date.today()
 yesterday = today - timedelta(days=1)
 
 pi_headers = {"Content-type": "application/json", "X-Requested-With": "XmlHttpRequest"}
-pi_url_prefix = "https://10.20.145.224/piwebapi/streams/"
+pi_url_prefix = os.getenv('PIWEBAPI_PREFIX')
 
 def get_hourly_value(path, session):
     try:
@@ -72,8 +74,18 @@ def get_daily_values(web_id):
     return data
 
 def restart_pi_analysis_service():
-    pass
-
+    user = os.getenv('WINRM_USERNAME')
+    password = os.getenv('WINRM_PASSWORD')
+    if not user or not password:
+        raise ValueError("WINRM_USERNAME or WINRM_PASSWORD environment variables are not set.")
+    session = winrm.Session(f'http://{PI_SERVER}:{PORT}/wsman', auth=(user, password), transport='ntlm') 
+    service = "PIAnalysisManager"
+    command = f""" 
+    Stop-Service -Name {service} -Force
+    Start-Service -Name {service}
+    """
+    session.run_ps(command)
+    
 # Format the data into XML
 def clear_data():
     with open('submission.xml', 'w') as xml:
